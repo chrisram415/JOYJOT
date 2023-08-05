@@ -10,9 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_05_025912) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_05_083151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gamecards", force: :cascade do |t|
+    t.boolean "solved", default: false
+    t.text "image_url"
+    t.bigint "joy_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_gamecards_on_game_id"
+    t.index ["joy_id"], name: "index_gamecards_on_joy_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.boolean "completed", default: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
+  create_table "joys", force: :cascade do |t|
+    t.text "description"
+    t.text "fortune"
+    t.string "genre"
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_joys_on_game_id"
+    t.index ["user_id"], name: "index_joys_on_user_id"
+  end
+
+  create_table "recommendations", force: :cascade do |t|
+    t.text "activity"
+    t.integer "rating", default: 0
+    t.string "genre"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_recommendations_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +67,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_05_025912) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "gamecards", "games"
+  add_foreign_key "gamecards", "joys"
+  add_foreign_key "games", "users"
+  add_foreign_key "joys", "games"
+  add_foreign_key "joys", "users"
+  add_foreign_key "recommendations", "users"
 end
