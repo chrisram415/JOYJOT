@@ -1,0 +1,2 @@
+class Gamecard < ApplicationRecord
+end
