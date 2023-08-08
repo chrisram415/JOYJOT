@@ -1,2 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+
+  <div class ="container mt-5">
+    <p>What made you happy today?</p>
+    <p>form to be added here</p>
+    <br>
+      <%# simple_form_for(@joy) do |f| %>
+      <%# f.input :joy_details %>
+      <%# f.input :rating %>
+      <%# f.submit %>
+    <%# end %>
+  </div>
+
+  <div class="container mt-5">
+    <p>Failed attempt of Stimulus rating here</p>
+    <div class="rating" data-controller="rating">
+      <label data-rating-target="star" data-action="click->rating#rate">
+        ★
+      </label>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="container">
+        <button type="submit" class="btn btn-submit btn-block mb-2 mb-md-0">Add your joy!</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+        <button type="submit" class="btn btn-inspire btn-block">Inspire me...</button>
+      </div>
+    </div>
+  </div>
+
+</div>
