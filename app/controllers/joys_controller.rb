@@ -1,0 +1,2 @@
+class JoysController < ApplicationController
+end
