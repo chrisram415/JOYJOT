@@ -1,12 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-4">
-      <h4>What made you smile today?</h4>
-      <br>
+    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+      <h4 class="text-center mb-4">What made you smile today?</h4>
       <%= simple_form_for @joy do |f| %>
         <%= f.input :description, input_html: { placeholder: "Tell us your joy..." }, label: false %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "How happy were you?", input_html: {data: {controller: "star-rating"}} %>
-        <%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mb-2 mb-md-0" %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "How happy were you?", input_html: { data: { controller: "star-rating" } } %>
+        <%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mt-3" %>
       <% end %>
     </div>
   </div>
