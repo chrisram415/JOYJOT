@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
+      <p>What made you smile today?</p>
       <%= simple_form_for @joy do |f| %>
-        <%= f.input :content %>
+        <%= f.input :description, input_html: { placeholder: "Tell us your joy..." } %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Rate your joy" %>
-        <%= f.submit "Add your joy!" %>
+        <%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mb-2 mb-md-0" %>
       <% end %>
     </div>
   </div>
