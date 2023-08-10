@@ -1,22 +1,11 @@
 <div class="container">
-
-  <div class ="container mt-5">
-    <p>What made you happy today?</p>
-    <p>form to be added here</p>
-    <br>
-      <%# simple_form_for(@joy) do |f| %>
-      <%# f.input :joy_details %>
-      <%# f.input :rating %>
-      <%# f.submit %>
-    <%# end %>
-  </div>
-
-  <div class="container mt-5">
-    <p>Failed attempt of Stimulus rating here</p>
-    <div class="rating" data-controller="rating">
-      <label data-rating-target="star" data-action="click->rating#rate">
-        ★
-      </label>
+  <div class="row">
+    <div class="col-xs-4">
+      <%= simple_form_for @joy do |f| %>
+        <%= f.input :content %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your joy" %>
+        <%= f.submit "Add your joy!" %>
+      <% end %>
     </div>
   </div>
 
