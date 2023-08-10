@@ -8,7 +8,7 @@ class JoysController < ApplicationController
     @joy = Joy.new(joy_params)
     @joy.user = current_user
     if @joy.save
-      redirect_to new_joy_path
+      redirect_to joy_path(@joy)
     else
       flash[:alert] = 'Something went wrong.'
       render :new
