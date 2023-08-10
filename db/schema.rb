@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_08_125410) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_08_134550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,11 +66,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_125410) do
     t.text "fortune"
     t.string "genre"
     t.bigint "user_id", null: false
-    t.bigint "game_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "rating", default: 0
-    t.index ["game_id"], name: "index_joys_on_game_id"
     t.index ["user_id"], name: "index_joys_on_user_id"
   end
 
@@ -101,7 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_125410) do
   add_foreign_key "gamecards", "games"
   add_foreign_key "gamecards", "joys"
   add_foreign_key "games", "users"
-  add_foreign_key "joys", "games"
   add_foreign_key "joys", "users"
   add_foreign_key "recommendations", "users"
 end
