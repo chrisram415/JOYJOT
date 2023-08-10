@@ -27,6 +27,18 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# added gems:
+# Add searchbar
+gem "pg_search"
+
+# Add the Cloudinary gem to your Gemfile
+gem 'cloudinary'
+
+# add faker seeds
+gem "faker"
+
+
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
