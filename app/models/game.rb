@@ -3,5 +3,5 @@ class Game < ApplicationRecord
   has_many :gamecards
   has_many :joys, through: :gamecards
 
-  validates :completed, presence: true
+  # validates :completed, presence: true
 end

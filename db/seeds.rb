@@ -56,7 +56,7 @@ puts "Now creating 1 new Joy per user User..."
 joy_data.each do |joy_info|
   p joy_info[:image_url]
   p user = User.find_by(email: joy_info[:email])
-  new_game = Game.create(completed: false, user_id: user.id)
+  new_game = Game.create!(user_id: user.id)
 
   # Use open-uri to download the image from the provided URL
   image_file = URI.open(joy_info[:image_url])
@@ -65,19 +65,20 @@ joy_data.each do |joy_info|
     rating: Faker::Number.between(from: 0, to: 5),
     fortune: Faker::TvShows::Spongebob.quote,
     genre: Faker::Music.genre,
-    user_id: user.id,
-    game_id: new_game.id,
+    user_id: user.id
   )
   # save joy plus add images
   joy.save!
   # joy.photo.attach(io: image_file, filename: "image.jpg")
 
   # Create Gamecards for the Joy
-  gamecard = Gamecard.create!(
+  gamecard = Gamecard.new(
     solved: [true, false].sample,
     joy_id: joy.id,
     game_id: new_game.id,
+    image_url: ""
   )
+  gamecard.save!
   gamecard.photo.attach(io: image_file, filename: "image.jpg")
 
 
