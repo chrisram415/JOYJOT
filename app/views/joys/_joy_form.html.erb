@@ -5,7 +5,7 @@
       <br>
       <%= simple_form_for @joy do |f| %>
         <%= f.input :description, input_html: { placeholder: "Tell us your joy..." }, label: false %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "How happy were you?" %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "How happy were you?", input_html: {data: {controller: "star-rating"}} %>
         <%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mb-2 mb-md-0" %>
       <% end %>
     </div>
