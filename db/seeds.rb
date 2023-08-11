@@ -16,17 +16,16 @@ puts "Done deleting.."
 
 puts "Creating 8 new Users..."
 
-# Create Users
-# Sample data for users
+
 users_data = [
-  { email: "john@example.com", password: "password" },
-  { email: "jane@example.com", password: "password" },
-  { email: "sarah@example.com", password: "password" },
-  { email: "yann@example.com", password: "password" },
-  { email: "chris@example.com", password: "password" },
-  { email: "saki@example.com", password: "password" },
-  { email: "alexia@example.com", password: "password" },
-  { email: "zhan@example.com", password: "password" }
+  { email: "john@example.com", password: "password", nickname: Faker::Artist.name, age: Faker::Number.between(from: 12, to: 85), gender: ['dude', 'dudette'].sample, location: Faker::Address.city },
+  { email: "jane@example.com", password: "password", nickname: Faker::Artist.name, age: Faker::Number.between(from: 12, to: 85), gender: ['dude', 'dudette'].sample, location: Faker::Address.city },
+  { email: "sarah@example.com", password: "password", nickname: Faker::Artist.name, age: Faker::Number.between(from: 12, to: 85), gender: ['dude', 'dudette'].sample, location: Faker::Address.city },
+  { email: "yann@example.com", password: "password", nickname: Faker::Artist.name, age: Faker::Number.between(from: 12, to: 85), gender: ['dude', 'dudette'].sample, location: Faker::Address.city },
+  { email: "chris@example.com", password: "password", nickname: Faker::Artist.name, age: Faker::Number.between(from: 12, to: 85), gender: ['dude', 'dudette'].sample, location: Faker::Address.city },
+  { email: "saki@example.com", password: "password", nickname: Faker::Artist.name, age: Faker::Number.between(from: 12, to: 85), gender: ['dude', 'dudette'].sample, location: Faker::Address.city },
+  { email: "alexia@example.com", password: "password", nickname: Faker::Artist.name, age: Faker::Number.between(from: 12, to: 85), gender: ['dude', 'dudette'].sample, location: Faker::Address.city },
+  { email: "zhan@example.com", password: "password", nickname: Faker::Artist.name, age: Faker::Number.between(from: 12, to: 85), gender: ['dude', 'dudette'].sample, location: Faker::Address.city }
 ]
 # a user has many joys, many games, and may reccomendations
 users_data.each do |user_info|

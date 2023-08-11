@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Your Joys</h1>
+</div>
+
+
+<div class="container mt-5">
+  <% if @joys.any? %>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>My Joy</th>
+            <th>My Genre</th>
+            <th>My Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @joys.each do |joy| %>
+            <tr>
+              <td><%= joy.description[0, 10] %>...</td>
+              <td><%= joy.genre %></td>
+              <td><%= joy.rating %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <p>You haven't created any joys yet.</p>
+  <% end %>
+</div>
