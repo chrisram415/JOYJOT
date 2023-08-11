@@ -69,6 +69,8 @@ joy_data.each do |joy_info|
   )
   # save joy plus add images
   joy.save!
+
+
   # joy.photo.attach(io: image_file, filename: "image.jpg")
 
   # Create Gamecards for the Joy
