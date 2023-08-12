@@ -3,9 +3,13 @@ class RecommendationsController < ApplicationController
   def index
     @recommendations = Recommendation.all
   end
-
+  
   def show
-
+    @recommendation = set_recommendations
+    @user = current_user
+    startdate = Date.today.prev_occurring(:friday)
+    enddate = startdate + 6.days
+    @joys = @user.joys.where(created_at: startdate...enddate)
   end
 
   private
