@@ -83,10 +83,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
-    bootstrap (5.2.3)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.11.6, < 3)
-      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     capybara (3.39.2)
       addressable
@@ -122,6 +118,12 @@ GEM
     execjs (2.8.1)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.0.2)
     ffi (1.15.5)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
@@ -157,6 +159,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.19.0)
     msgpack (1.7.2)
+    multipart-post (2.3.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -179,7 +182,6 @@ GEM
     pg_search (2.3.6)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
-    popper_js (2.11.7)
     public_suffix (5.0.3)
     puma (5.6.6)
       nio4r (~> 2.0)
@@ -228,6 +230,10 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.6)
+    ruby-openai (4.2.0)
+      faraday (>= 1)
+      faraday-multipart (>= 1)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -289,7 +295,6 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-  bootstrap (~> 5.2)
   capybara
   cloudinary
   debug
@@ -303,6 +308,7 @@ DEPENDENCIES
   pg_search
   puma (~> 5.0)
   rails (~> 7.0.6)
+  ruby-openai
   sassc-rails
   selenium-webdriver
   simple_form!
