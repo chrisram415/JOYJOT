@@ -1,64 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JoyJot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>JoyJot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%# javascript_include_tag "application", "data-turbo-track": "reload", defer: true -- above commented out due to error when running localhost:3000%>
-  </head>
+<body>
+  <!-- NAVBAR -->
+  <%= render 'shared/navbar' %>
 
-  <body>
-    <!-- NAVBAR -->
+  <!-- BANNER -->
+  <%= render 'shared/banner' %>
 
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <div class="container-fluid">
-        <%= link_to root_path, class: "navbar-brand" do %>
-          <img src="assets/sun.png">
-        <% end %>
+  <!-- PAGE CONTENTS -->
+  <div class="container mt-5">
+    <%= yield %>
+  </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <!-- FOOTER -->
+  <%= render 'shared/footer' %>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="<%= root_path %>">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/users/sign_in">Login/sign-up</a>
-              </li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <!-- BANNER -->
-    <div class="banner" style="background-image: url(<%= image_path('rainbow.jpg') %>)">
-      <div class="container">
-        <h1>JOYJOT</h1>
-      </div>
-    </div>
-
-    <!-- page contents -->
-
-      <%= yield %>
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div>
-      <div class="footer-copyright">
-        2023 JoyJot@LeWagon
-      </div>
-    </div>
-
-  </body>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</body>
 </html>

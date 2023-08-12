@@ -1,4 +1,9 @@
+# Controller responsible for managing Reccomendations in the application.
 class RecommendationsController < ApplicationController
+  def index
+    @recommendations = Recommendation.all
+  end
+  
   def show
     @recommendation = set_recommendations
     @user = current_user

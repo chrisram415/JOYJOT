@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Joy Details</h1>
+</div>
+
+<div class="container mt-5">
+  <div class="fortune-cookie">
+    <p><strong>My Fortune Cookie:</strong> <%= @joy.fortune %></p>
+  </div>
+
+  <div class="joy-info mt-5">
+    <div class="joy-contents">
+      <ul>
+        <li>My Nickname: <%= @joy.user.nickname %></li>
+        <li>My Joy: <%= @joy.description %></li>
+        <!-- <%# <li>My Genre: <%= @joy.genre %></li> -->
+        <li>My Rating: <%= @joy.rating %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Back to all my joys', joys_path %>
