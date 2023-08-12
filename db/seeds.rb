@@ -58,7 +58,7 @@ joy_data.each do |joy_info|
   new_game = Game.create!(user_id: user.id)
 
   # Use open-uri to download the image from the provided URL
-  image_file = URI.open(joy_info[:image_url])
+  # image_file = URI.open(joy_info[:image_url])
   joy = Joy.new(
     description: Faker::Hobby.activity,
     rating: Faker::Number.between(from: 0, to: 5),
@@ -80,7 +80,7 @@ joy_data.each do |joy_info|
     image_url: ""
   )
   gamecard.save!
-  gamecard.photo.attach(io: image_file, filename: "image.jpg")
+  # gamecard.photo.attach(io: image_file, filename: "image.jpg")
 
 
   # Create Recommendations
