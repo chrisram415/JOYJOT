@@ -1,3 +1,4 @@
+# Controller responsible for managing joys in the application.
 class JoysController < ApplicationController
 
   def new
