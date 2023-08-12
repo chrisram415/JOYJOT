@@ -9,7 +9,7 @@
         <thead>
           <tr>
             <th>My Joy</th>
-            <th>My Genre</th>
+            <!-- <th>My Genre</th> -->
             <th>My Rating</th>
           </tr>
         </thead>
@@ -17,7 +17,7 @@
           <% @joys.each do |joy| %>
             <tr>
               <td><%= joy.description[0, 10] %>...</td>
-              <td><%= joy.genre %></td>
+              <!-- <td><%= joy.genre %></td> -->
               <td><%= joy.rating %></td>
             </tr>
           <% end %>
