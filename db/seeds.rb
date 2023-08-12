@@ -80,7 +80,7 @@ joy_data.each do |joy_info|
     image_url: ""
   )
   gamecard.save!
-  gamecard.photo.attach(io: image_file, filename: "image.jpg")
+  # gamecard.photo.attach(io: image_file, filename: "image.jpg")
 
 
   # Create Recommendations
