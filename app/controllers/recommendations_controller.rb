@@ -3,13 +3,21 @@ class RecommendationsController < ApplicationController
   def index
     @recommendations = Recommendation.all
   end
-  
+
   def show
     @recommendation = set_recommendations
     @user = current_user
     startdate = Date.today.prev_occurring(:friday)
     enddate = startdate + 6.days
     @joys = @user.joys.where(created_at: startdate...enddate)
+    joy_ratings = @joys.map do |joy|
+      joy.rating
+    end
+    if @joys.empty?
+      @ave_rating = 0
+    else
+      @ave_rating = joy_ratings.sum.to_f / @joys.count
+    end
   end
 
   private
