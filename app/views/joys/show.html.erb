@@ -4,16 +4,16 @@
 
 <div class="container mt-5">
   <div class="fortune-cookie">
-    <p><strong>Fortune Cookie:</strong> <%= @joy.fortune %></p>
+    <p><strong>My Fortune Cookie:</strong> <%= @joy.fortune %></p>
   </div>
 
   <div class="joy-info mt-5">
     <div class="joy-contents">
       <ul>
-        <li>Title: <%= @joy.title %></li>
-        <li>Content: <%= @joy.content %></li>
-        <li>Genre: <%= @joy.genre %></li>
-        <li>Rating: <%= @joy.rating %></li>
+        <li>My Nickname: <%= @joy.user.nickname %></li>
+        <li>My Joy: <%= @joy.description %></li>
+        <li>My Genre: <%= @joy.genre %></li>
+        <li>My Rating: <%= @joy.rating %></li>    
       </ul>
     </div>
   </div>

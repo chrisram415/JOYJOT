@@ -8,19 +8,15 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Fortune</th>
-            <th>Genre</th>
-            <th>Rating</th>
+            <th>My Joy</th>
+            <th>My Genre</th>
+            <th>My Rating</th>
           </tr>
         </thead>
         <tbody>
           <% @joys.each do |joy| %>
             <tr>
-              <td><%= joy.title %></td>
-              <td><%= joy.description %></td>
-              <td><%= joy.fortune %></td>
+              <td><%= joy.description[0, 10] %>...</td>
               <td><%= joy.genre %></td>
               <td><%= joy.rating %></td>
             </tr>

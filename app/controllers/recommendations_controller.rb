@@ -1,3 +1,4 @@
+# Controller responsible for managing Reccomendations in the application.
 class RecommendationsController < ApplicationController
   def show
 
