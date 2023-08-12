@@ -37,6 +37,9 @@ gem 'cloudinary'
 # add faker seeds
 gem "faker"
 
+# Gemfile add ai access
+gem "ruby-openai"
+
 
 
 # Use Redis adapter to run Action Cable in production
