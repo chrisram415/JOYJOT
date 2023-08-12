@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :joys
-  has_many :recommendations
+  has_many :recommendations, dependent: :destroy
   has_many :games
   has_many :gamecards, through: :games
 

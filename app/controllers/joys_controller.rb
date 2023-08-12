@@ -19,10 +19,13 @@ class JoysController < ApplicationController
     @joys = current_user.joys.all
   end
 
+  def show
+    @joy = Joy.find(params[:id])
+  end
+
   private
 
   def joy_params
     params.require(:joy).permit(:description, :rating)
   end
-
 end
