@@ -7,7 +7,9 @@
     <% @recommendations.each do |recommendation| %>
       <a href="<%= recommendation_path(recommendation.id) %>" class="card-reco">
         <div class="card-reco-body">
-          <h3 class="card-title"><%= recommendation.created_at%></h3>
+          <h3 class="card-title">
+            <%= recommendation.created_at.strftime('%Y-%m-%d') %> Week
+          </h3>
           <br>
           <div class="card-text">
             <p><%= recommendation.activity %></p>
