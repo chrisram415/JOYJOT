@@ -3,6 +3,21 @@
     <h1>Your recommendations</h1>
   </div>
 
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3 custom-margin-bottom">
+      <div class="rounded-border-search">
+        <%= form_with url: recommendations_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control border-0 bg-white",
+                placeholder: "Type a keyword..."
+            %>
+          <%= submit_tag "Search", activity: "", class: "btn btn-submit" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="home-grid mt-5 d-flex flex-wrap">
     <% @recommendations.each do |recommendation| %>
       <a href="<%= recommendation_path(recommendation.id) %>" class="card-reco">

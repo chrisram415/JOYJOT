@@ -1,7 +1,11 @@
 # Controller responsible for managing Reccomendations in the application.
 class RecommendationsController < ApplicationController
   def index
-    @recommendations = Recommendation.all
+    if params[:query].present?
+      @recommendations = Recommendation.search_by_activity(params[:query])
+    else
+      @recommendations = Recommendation.all
+    end
   end
 
   def show

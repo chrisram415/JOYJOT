@@ -1,0 +1,32 @@
+/* Custom CSS for the rounded border search bar */
+.rounded-border-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ced4da;
+  padding-left: 5px;
+  background-color: white; /* Set background to white */
+}
+
+.rounded-border-search form {
+  display: flex;
+  flex: 1;
+  background-color: white; /* Set background to white */
+}
+
+/* Remove border from the search button */
+.rounded-border-search .btn {
+  border: none; /* Remove the border */
+  border-radius: 25px;
+  background-color: #eca6af;
+  font-weight: bold;
+  color: #353337;
+  padding: 8px 24px;
+  opacity: 0.7;
+  transition: opacity 0.8s ease;
+}
+
+/* Keep button appearance on hover */
+.rounded-border-search .btn:hover {
+  opacity: 1;
+  background-color: #ddb5dfcd;
+}
