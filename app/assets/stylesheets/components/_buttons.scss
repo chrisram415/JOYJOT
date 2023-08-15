@@ -31,3 +31,21 @@
   background: #9dbad8;
   color: #1b171f;
 }
+
+.btn-back {
+  color: #353337;
+  border: 1px solid #897d97;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.7;
+  transition: opacity 0.8s ease;
+  background: #e1d2f2;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.btn-back:hover {
+  opacity: 1;
+  background: #f0e4fa;
+  color: #1b171f;
+}

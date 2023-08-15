@@ -1,21 +1,29 @@
 <div class="container mt-4">
-  <h1 class="text-center">🌻 Recommendation 🌻</h1>
+  <div class="home-grid mt-5 d-flex flex-wrap">
+    <div class="card-reco-show">
+      <h1 class="text-center">Weekly recommendation</h1>
 
-  <div class="rec-stats mt-4">
-    <h2>Weekly Breakdown</h2>
-    <h5>Number of Joys 🌱: <strong><%= @joys.count %></strong></h5>
-    <h5>Average Joy Rating ⭐️: <strong><%= @ave_rating %></strong></h5>
+      <div class="reco-stats mt-4">
+        <h5 class="mt-5">Insights:</h5>
+        <ul>
+          <li>You had <%= @joys.count %> joys this week <i class="fa-solid fa-heart" style="color: #ff94d8;"></i></li>
+          <li>Your average joys rating was <%= @ave_rating %> <i class="fas fa-star" style="color: #ffc800"></i></li>
+        </ul>
+      </div>
+
+      <div class="reco-info mt-4">
+        <h5 class="mt-4">Suggestions:</h5>
+        <% activities_string = @recommendation.activity %>
+        <% activities = activities_string.split(/(?=\d\.\s)/) %> <!--- regex w/ pos. lookahead-->
+
+        <% activities.each do |activity| %>
+          <p><%= activity.strip %></p>
+        <% end %>
+      </div>
+
+      <div class="mt-5 back-button">
+        <%= link_to 'Back', recommendations_path, class: 'btn-back' %>
+      </div>
+    </div>
   </div>
-
-  <div class="rec-info mt-4">
-    <h2>Activities to Try</h2>
-    <% activities_string = @recommendation.activity %>
-    <% activities = activities_string.split(/(?=\d\.\s)/) %> <!--- regex w/ pos. lookahead-->
-
-    <% activities.each do |activity| %>
-      <p><%= activity.strip %></p>
-    <% end %>
-  </div>
-
-<%= link_to 'Previous Recs', recommendations_path %>
 </div>
