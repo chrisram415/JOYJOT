@@ -1,3 +1,5 @@
+/* recommendation index */
+
 .card-reco {
   border-radius: 10px;
   width: 550px;
@@ -14,11 +16,21 @@
   background-color: #f2e1e8;
 }
 
-
 .card-reco-body {
   padding: 15px;
   font-size: 16px;
 }
+
+.responsive-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.responsive-truncate:hover {
+  white-space: normal;
+}
+
 
 /*
 .card-reco-img-top {
