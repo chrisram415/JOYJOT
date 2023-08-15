@@ -12,8 +12,7 @@
           </h3>
           <br>
           <div class="card-text">
-            <p><%= recommendation.activity %></p>
-            <p>
+            <p class="responsive-truncate"><%= recommendation.activity %></p>
               <% recommendation.rating.times do %>
                 <i class="fas fa-star yellow-star"></i>
               <% end %>
