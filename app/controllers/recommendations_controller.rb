@@ -20,7 +20,7 @@ class RecommendationsController < ApplicationController
     if @joys.empty?
       @ave_rating = 0
     else
-      @ave_rating = joy_ratings.sum.to_f / @joys.count
+      @ave_rating = (joy_ratings.sum.to_f / @joys.count).round(1)
     end
   end
 
