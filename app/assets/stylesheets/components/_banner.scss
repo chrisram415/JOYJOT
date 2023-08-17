@@ -11,16 +11,191 @@
   color: white;
   text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.8);
   font-weight: bold;
-  font-size: 44px;
+  font-size: 54px;
   position: absolute;
   top: 0;
   left: 0;
   padding: 20px;
+  /* font-family: 'Kablammo', cursive; */
+  /* font-family: 'Dancing Script', cursive; */
+  /* font-family: 'Satisfy', cursive; */
+  font-family: 'Cherry Bomb One', cursive;
+  text-stroke: 0.1px #b1acac;
+  -webkit-text-stroke: 0.1px #b1acac;// for browser compatibility
 }
 
-.banner p {
-  font-size: 26px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+// animation
+
+.banner::before,
+.banner::after,
+.banner .right-firefly1,
+.banner .right-firefly2 {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.banner::before {
+  top: 50px;
+  left: 20px;
+  animation: fireflyAnimation1 30s linear infinite;
+}
+
+.banner::after {
+  top: 150px;
+  left: 80px;
+  animation: fireflyAnimation2 30s linear infinite;
+}
+
+.banner .right-firefly1 {
+  top: 80px;
+  right: 20px;
+  animation: fireflyAnimation3 30s linear infinite;
+}
+
+.banner .right-firefly2 {
+  top: 200px;
+  right: 80px;
+  animation: fireflyAnimation4 30s linear infinite;
+}
+
+.banner .middle-firefly {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  top: 120px; /* Adjust the top position to place it in the middle */
+  left: 50%; /* Position it in the horizontal center */
+  transform: translateX(-50%); /* Center it horizontally */
+  animation: fireflyAnimation5 15s linear infinite;
+}
+
+.banner .upper-right-firefly {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  top: 30px; /* Adjust the top position */
+  right: 30px; /* Adjust the right position */
+  animation: fireflyAnimation6 10s linear infinite;
+}
+
+
+@keyframes fireflyAnimation1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100px, -50px);
+  }
+  50% {
+    transform: translate(200px, 0);
+  }
+  75% {
+    transform: translate(100px, 50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fireflyAnimation2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-50px, 50px);
+  }
+  50% {
+    transform: translate(-150px, 0);
+  }
+  75% {
+    transform: translate(-50px, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fireflyAnimation3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-100px, -50px); /* Changed from translate(100px, -50px) */
+  }
+  50% {
+    transform: translate(-200px, 0);   /* Changed from translate(200px, 0) */
+  }
+  75% {
+    transform: translate(-100px, 50px); /* Changed from translate(100px, 50px) */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+@keyframes fireflyAnimation4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-50px, 50px);
+  }
+  50% {
+    transform: translate(-150px, 0);
+  }
+  75% {
+    transform: translate(-50px, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fireflyAnimation5 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, -25px);
+  }
+  50% {
+    transform: translate(100px, 0);
+  }
+  75% {
+    transform: translate(50px, 25px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fireflyAnimation6 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-25px, -15px);
+  }
+  50% {
+    transform: translate(-50px, 0);
+  }
+  75% {
+    transform: translate(-25px, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

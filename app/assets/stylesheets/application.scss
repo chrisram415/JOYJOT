@@ -18,3 +18,28 @@
 @import "components/cards";
 @import "components/stars";
 @import "components/searchbar";
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Dancing+Script&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
+
+// common features
+
+body {
+  color: #675764;
+}
+
+h2 {
+  font-family: 'Comic Sans MS', cursive;
+  color: white;
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #675764;
+  position: relative;
+}
+
+h4 {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 20px;
+  color: #675764;
+}
