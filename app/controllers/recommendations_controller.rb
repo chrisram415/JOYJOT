@@ -2,10 +2,14 @@
 class RecommendationsController < ApplicationController
 
   def index
+    # @recommendations = current_user.recommendations
 
-
-    @recommendations = current_user.recommendations
-    # @recommendations = Recommendation.all
+    if params[:query].present?
+      @recommendations = Recommendation.search_by_activity(params[:query])
+    else
+      # @recommendations = Recommendation.all
+      @recommendations = current_user.recommendations
+    end
   end
 
   def show
@@ -21,7 +25,7 @@ class RecommendationsController < ApplicationController
     if @joys.empty?
       @ave_rating = 0
     else
-      @ave_rating = joy_ratings.sum.to_f / @joys.count
+      @ave_rating = (joy_ratings.sum.to_f / @joys.count).round(1)
     end
   end
 
