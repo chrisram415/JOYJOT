@@ -15,6 +15,11 @@ module JoyJot
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    # tells the active job that the queue adapter is sidekiq - needed for running our
+    # Sidekiq uses Redis, an in memory data store, to store jobs that are processed by the worker.
+    # It is the Rails process that creates jobs that are processed in the background.
+    # This is responsible for running jobs by pulling them from the Redis queue.
+    config.active_job.queue_adapter = :sidekiq
 
     # Configuration for the application, engines, and railties goes here.
     #
