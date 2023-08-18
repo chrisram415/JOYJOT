@@ -20,8 +20,8 @@
   /* font-family: 'Dancing Script', cursive; */
   /* font-family: 'Satisfy', cursive; */
   font-family: 'Cherry Bomb One', cursive;
-  text-stroke: 0.1px #b1acac;
-  -webkit-text-stroke: 0.1px #b1acac;// for browser compatibility
+  text-stroke: 0.1px #cbdbe6;
+  -webkit-text-stroke: 0.1px #cbdbe6;// for browser compatibility
 }
 
 // animation
@@ -85,8 +85,8 @@
   background: #fff;
   border-radius: 50%;
   opacity: 0.7;
-  top: 30px; /* Adjust the top position */
-  right: 30px; /* Adjust the right position */
+  top: 30px;
+  right: 30px;
   animation: fireflyAnimation6 10s linear infinite;
 }
 
@@ -132,13 +132,13 @@
     transform: translate(0, 0);
   }
   25% {
-    transform: translate(-100px, -50px); /* Changed from translate(100px, -50px) */
+    transform: translate(-100px, -50px);
   }
   50% {
-    transform: translate(-200px, 0);   /* Changed from translate(200px, 0) */
+    transform: translate(-200px, 0);
   }
   75% {
-    transform: translate(-100px, 50px); /* Changed from translate(100px, 50px) */
+    transform: translate(-100px, 50px);
   }
   100% {
     transform: translate(0, 0);
@@ -198,4 +198,11 @@
   100% {
     transform: translate(0, 0);
   }
+}
+
+// reco banner
+.pink-background {
+  background-color: rgba(242, 225, 232, 0.5);
+  padding: 15px;
+  border-radius: 10px;
 }
