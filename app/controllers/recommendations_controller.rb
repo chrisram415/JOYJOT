@@ -19,18 +19,16 @@ class RecommendationsController < ApplicationController
     @recommendation = set_recommendations
     @user = current_user
     startdate = Date.today.prev_occurring(:friday)
-    # enddate = startdate + 6.days
-    enddate = startdate + 7.days
+    enddate = startdate + 6.days
     @joys = @user.joys.where(created_at: startdate...enddate)
     joy_ratings = @joys.map do |joy|
-      # || operator to convert any nil ratings to 0 when building the joy_ratings array.
-      joy.rating || 0  # Convert nil ratings to 0
+      joy.rating
     end
-    # if joy_ratings.empty?
-    #   @ave_rating = 0
-    # else
-    @ave_rating = (joy_ratings.sum.to_f / joy_ratings.count).round(1)
-    # end
+    if @joys.empty?
+      @ave_rating = 0
+    else
+      @ave_rating = (joy_ratings.sum.to_f / @joys.count).round(1)
+    end
   end
 
   private
