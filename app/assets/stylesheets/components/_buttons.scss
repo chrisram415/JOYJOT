@@ -49,3 +49,17 @@
   background: #f0e4fa;
   color: #1b171f;
 }
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.5;
+  transition: opacity 0.8s ease;
+}
+
+.btn-ghost:hover {
+  opacity: .8;
+}
