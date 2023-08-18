@@ -1,4 +1,6 @@
 # Controller responsible for managing Reccomendations in the application.
+# <%# adding line of comment code to fix revert %>
+
 class RecommendationsController < ApplicationController
 
   def index
