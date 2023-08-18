@@ -1,6 +1,8 @@
 # Controller responsible for managing Reccomendations in the application.
 # <%# adding line of comment code to fix revert %>
 
+
+
 class RecommendationsController < ApplicationController
 
   def index
@@ -43,6 +45,9 @@ class RecommendationsController < ApplicationController
     params.require(:recommendation).permit(:activity, :rating, :genre)
   end
 end
+
+# <%# adding line of comment code to fix revert %>
+
 
 #  # code below creates a reccomendation from the joys within a period from current_user
 #  @user = current_user
