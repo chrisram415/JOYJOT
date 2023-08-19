@@ -18,3 +18,52 @@
 @import "components/cards";
 @import "components/stars";
 @import "components/searchbar";
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Dancing+Script&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
+
+// common features
+
+body {
+  color: #675764;
+}
+
+h2 {
+  text-align: center;
+  font-size: 38px;
+  color: #fd7897;
+  position: relative;
+  font-family: 'Cherry Bomb One', cursive;
+  text-stroke: 0.7px #fcfcfc;
+  -webkit-text-stroke: 0.7px #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin-bottom: 40px;
+}
+
+h3 {
+  font-family: 'Comic Sans MS', cursive;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  color: #ffffff;
+  position: relative;
+  text-stroke: 0.1px #cbdbe6;
+  -webkit-text-stroke: 0.1px #cbdbe6;
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+}
+
+
+h4 {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 20px;
+  color: #675764;
+}
+
+.date {
+  text-align: right;
+  color: #958893;
+  font-style: italic;
+  font-size: 14px;
+}

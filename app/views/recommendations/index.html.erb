@@ -1,8 +1,6 @@
 <div class="container">
   <div class="description mt-5">
-    <h1>Your recommendations</h1>
-    <%# descriptions = @joys.map { |joy| joy.description } %>
-    <%#<%= descriptions %>
+    <h2>Your recommendations</h2>
   </div>
 
   <div class="row justify-content-center">
@@ -25,16 +23,13 @@
     <% @recommendations.each do |recommendation| %>
       <a href="<%= recommendation_path(recommendation.id) %>" class="card-reco">
         <div class="card-reco-body">
-          <h3 class="card-title">
-            <%= recommendation.created_at.strftime('%Y-%m-%d') %> Week
-          </h3>
-          <br>
           <div class="card-text">
             <p class="responsive-truncate"><%= recommendation.activity %></p>
               <% recommendation.rating.times do %>
                 <i class="fas fa-star yellow-star"></i>
               <% end %>
             </p>
+            <p class="date"><%= recommendation.created_at.strftime('%Y-%m-%d') %></p>
           </div>
         </div>
       </a>
