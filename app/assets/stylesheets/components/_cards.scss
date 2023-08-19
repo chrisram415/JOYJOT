@@ -12,12 +12,25 @@
   padding: 20px;
 }
 
+// reco banner (pink behind pic)
+.pink-background {
+  background-color: rgb(241, 200, 219);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+// .reco-background {
+  // background-size: cover; /* Scale the image to cover the entire container */
+  // background-repeat: no-repeat; /* Prevent the image from repeating */
+  // background-position: center center; /* Center the image within the container */
+// }
+
 .card-reco:hover {
   background-color: #f2e1e8;
 }
 
 .card-reco-body {
-  padding: 15px;
+  padding: 10px;
   font-size: 16px;
 }
 
@@ -31,17 +44,6 @@
   white-space: normal;
 }
 
-
-/*
-.card-reco-img-top {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ccc;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-*/
 
 .card-reco-show {
   border-radius: 10px;

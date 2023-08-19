@@ -23,16 +23,13 @@
     <% @recommendations.each do |recommendation| %>
       <a href="<%= recommendation_path(recommendation.id) %>" class="card-reco">
         <div class="card-reco-body">
-          <h4 class="card-title">
-            <%= recommendation.created_at.strftime('%Y-%m-%d') %> Week
-          </h4>
-          <br>
           <div class="card-text">
             <p class="responsive-truncate"><%= recommendation.activity %></p>
               <% recommendation.rating.times do %>
                 <i class="fas fa-star yellow-star"></i>
               <% end %>
             </p>
+            <p class="date"><%= recommendation.created_at.strftime('%Y-%m-%d') %></p>
           </div>
         </div>
       </a>
