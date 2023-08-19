@@ -24,7 +24,8 @@ class JoysController < ApplicationController
       redirect_to joy_path(@joy)
     else
       flash[:alert] = 'Something went wrong.'
-      render :new
+      # render :new
+      redirect_to new_joy_path
     end
   end
 
@@ -32,6 +33,9 @@ class JoysController < ApplicationController
 
   def index
     @joys = current_user.joys.all
+    @joys.each do |joy|
+      joy.rating ||= 0 # Set a default value of 0 if rating is nil
+    end
   end
 
   def show
