@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import StarRatingController from "./star_rating_controller"
 application.register("star-rating", StarRatingController)
+
+import InspireButtonController from "./inspire_button_controller"
+application.register("inspire-button", InspireButtonController)
