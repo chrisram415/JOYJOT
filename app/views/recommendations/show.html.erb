@@ -1,12 +1,16 @@
+<%# adding line of comment code to fix revert %>
+
 <div class="container mt-4">
   <div class="home-grid mt-5 d-flex flex-wrap">
     <div class="card-reco-show">
-      <h2 class="text-center"> <%= @recommendation.created_at.strftime('%Y-%m-%d') %> <br> Weekly Recommendation</h2>
+      <div class="pink-background reco-background"> <!--style="background-image: url('<%= asset_path('reco-banner.jpg') %>');"-->
+        <h3 class="text-center"> <%= @recommendation.created_at.strftime('%Y-%m-%d') %> <br> Weekly Recommendation</h3>
+      </div>
 
       <div class="reco-stats mt-4">
         <h5 class="mt-5">Insights:</h5>
         <ul>
-          <li>You had <strong><%= @joys.count %></strong> joys this week <i class="fa-solid fa-heart" style="color: #ff94d8;"></i></li>
+          <li>You had <strong><%= @joys.size %></strong> joys this week <i class="fa-solid fa-heart" style="color: #ff94d8;"></i></li>
           <li>Your average joy rating was <strong><%= @ave_rating %></strong> <i class="fas fa-star" style="color: #ffc800"></i></li>
         </ul>
       </div>
@@ -27,3 +31,5 @@
     </div>
   </div>
 </div>
+
+<%# adding line of comment code to fix revert %>

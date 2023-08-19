@@ -1,30 +1,29 @@
+<%# adding line of comment code to fix revert %>
+
 <div class="container">
-  <h1>Your Joys</h1>
+  <div class="description mt-5">
+    <h2>Your joys</h2>
+  </div>
+
+  <div class="home-grid mt-5 d-flex flex-wrap">
+    <% if @joys.any? %>
+      <% @joys.each do |joy| %>
+        <a href="<%= joy_path(joy.id) %>" class="card-reco">
+          <div class="card-reco-body">
+            <div class="card-text">
+              <p class="responsive-truncate"><%= joy.description %></p>
+              <% joy.rating.times do %>
+                <i class="fas fa-star yellow-star"></i>
+              <% end %>
+              <p class="date"><%= joy.created_at.strftime('%Y-%m-%d') %></p>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    <% else %>
+      <p>You haven't created any joys yet.</p>
+    <% end %>
+  </div>
 </div>
 
-<div class="container mt-5">
-  <% if @joys.any? %>
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>My Joy</th>
-            <!-- <th>My Genre</th> -->
-            <th>My Rating</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @joys.each do |joy| %>
-            <tr>
-              <td><%= joy.description[0, 10] %>...</td>
-              <!-- <td><%= joy.genre %></td> -->
-              <td><%= joy.rating %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  <% else %>
-    <p>You haven't created any joys yet.</p>
-  <% end %>
-</div>
+<%# adding line of comment code to fix revert %>
