@@ -1,4 +1,8 @@
 # Controller responsible for managing Reccomendations in the application.
+# <%# adding line of comment code to fix revert %>
+
+
+
 class RecommendationsController < ApplicationController
 
   def index
@@ -17,16 +21,18 @@ class RecommendationsController < ApplicationController
     @recommendation = set_recommendations
     @user = current_user
     startdate = Date.today.prev_occurring(:friday)
-    enddate = startdate + 6.days
+    # enddate = startdate + 6.days
+    enddate = startdate + 7.days
     @joys = @user.joys.where(created_at: startdate...enddate)
     joy_ratings = @joys.map do |joy|
-      joy.rating
+      # || operator to convert any nil ratings to 0 when building the joy_ratings array.
+      joy.rating || 0  # Convert nil ratings to 0
     end
-    if @joys.empty?
-      @ave_rating = 0
-    else
-      @ave_rating = (joy_ratings.sum.to_f / @joys.count).round(1)
-    end
+    # if joy_ratings.empty?
+    #   @ave_rating = 0
+    # else
+    @ave_rating = (joy_ratings.sum.to_f / joy_ratings.count).round(1)
+    # end
   end
 
   private
@@ -39,6 +45,9 @@ class RecommendationsController < ApplicationController
     params.require(:recommendation).permit(:activity, :rating, :genre)
   end
 end
+
+# <%# adding line of comment code to fix revert %>
+
 
 #  # code below creates a reccomendation from the joys within a period from current_user
 #  @user = current_user

@@ -1,3 +1,5 @@
+<%# adding line of comment code to fix revert %>
+
 <div class="container">
   <h1>Your Joys</h1>
 </div>
@@ -16,7 +18,7 @@
         <tbody>
           <% @joys.each do |joy| %>
             <tr>
-              <td><%= joy.description[0, 10] %>...</td>
+              <td><%= joy.description[0, 15] %>...</td>
               <!-- <td><%= joy.genre %></td> -->
               <td><%= joy.rating %></td>
             </tr>
@@ -28,3 +30,5 @@
     <p>You haven't created any joys yet.</p>
   <% end %>
 </div>
+
+<%# adding line of comment code to fix revert %>
