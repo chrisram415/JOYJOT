@@ -8,15 +8,12 @@
       <% @joys.each do |joy| %>
         <a href="<%= joy_path(joy.id) %>" class="card-reco">
           <div class="card-reco-body">
-            <h4 class="card-title">
-              <%= joy.created_at.strftime('%Y-%m-%d') %>
-            </h4>
-            <br>
             <div class="card-text">
               <p class="responsive-truncate"><%= joy.description %></p>
               <% joy.rating.times do %>
                 <i class="fas fa-star yellow-star"></i>
               <% end %>
+              <p class="date"><%= joy.created_at.strftime('%Y-%m-%d') %></p>
             </div>
           </div>
         </a>
