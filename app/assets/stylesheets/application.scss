@@ -29,12 +29,17 @@ body {
 }
 
 h2 {
-  font-family: 'Comic Sans MS', cursive;
-  color: white;
   text-align: center;
-  font-size: 26px;
-  color: #675764;
+  font-size: 38px;
+  color: #fd7897;
   position: relative;
+  font-family: 'Cherry Bomb One', cursive;
+  text-stroke: 0.7px #fcfcfc;
+  -webkit-text-stroke: 0.7px #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin-bottom: 40px;
 }
 
 h3 {
