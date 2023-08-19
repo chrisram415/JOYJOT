@@ -11,7 +11,7 @@
         Inspire me...
       </button>
       <h4 class="text-center mb-4" id="inspireText" style="display: none;" data-inspire-button-target="text">
-        What made you smile today?
+        <%= @random_prompt %>
       </h4>
 
       <%= render 'joys/joy_form' %>
@@ -21,3 +21,12 @@
 </div>
 
 <%# adding line of comment code to fix revert %>
+
+<%# 1 inspire per joy
+at variable in pages/home method controller
+@inspire = array 10 strings %>
+<%# pe tag smapel from  vatriable
+
+cycle:
+inaspire btn = linkto refesh page
+1 bt shows = messasge 2nd btn = rferedh page  %>
