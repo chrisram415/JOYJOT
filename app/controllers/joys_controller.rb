@@ -21,11 +21,13 @@ class JoysController < ApplicationController
     @joy.user = current_user
     @joy.fortune = @response # Assign the OpenAI response to the 'fortune' attribute
     if @joy.save
+      GamecardJob.perform_now(@joy)
       redirect_to joy_path(@joy)
     else
       flash[:alert] = 'Something went wrong.'
       render :new
     end
+
   end
 
 
