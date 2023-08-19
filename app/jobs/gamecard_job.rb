@@ -10,6 +10,8 @@ class GamecardJob < ApplicationJob
         Game.last
       end
     card = Gamecard.new(joy_id: joy.id, game_id: game.id)
+    # image_url = StableDiffusionService.new(joy.description).call
+    # card.image_url = image_url
     card.save
   end
 end
