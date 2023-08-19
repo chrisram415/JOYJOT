@@ -4,20 +4,34 @@
   border-radius: 10px;
   width: 550px;
   overflow: hidden;
-  color: rgb(48, 46, 46);
+  color: #675764;
   margin-bottom: 20px;
   transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
   padding: 20px;
+  padding-bottom: 10px;
 }
+
+// reco banner (pink behind pic)
+.pink-background {
+  background-color: rgb(241, 200, 219);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+// .reco-background {
+  // background-size: cover; /* Scale the image to cover the entire container */
+  // background-repeat: no-repeat; /* Prevent the image from repeating */
+  // background-position: center center; /* Center the image within the container */
+// }
 
 .card-reco:hover {
   background-color: #f2e1e8;
 }
 
 .card-reco-body {
-  padding: 15px;
+  padding: 10px;
   font-size: 16px;
 }
 
@@ -32,27 +46,17 @@
 }
 
 
-/*
-.card-reco-img-top {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ccc;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
-*/
-
 .card-reco-show {
   border-radius: 10px;
   width: 550px;
   overflow: hidden;
-  color: rgb(48, 46, 46);
+  color: #675764;
   margin-bottom: 20px;
   transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
   padding: 20px;
+  padding-bottom: 30px;
 }
 
 a {
