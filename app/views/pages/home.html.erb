@@ -1,23 +1,24 @@
 <%# adding line of comment code to fix revert %>
 
-<div>
-  <a class="btn btn-ghost" href="/recommendations">Happy Friday! Your Weekly Reccomendations Are Ready!</a>
-</div>
-
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4" data-controller="inspire-button">
-      <button type="submit" class="btn btn-inspire btn-block" data-inspire-button-target="content" data-action="click->inspire-button#toggleText">
-        Inspire me...
-      </button>
-      <h4 class="text-center mb-4" id="inspireText" style="display: none;" data-inspire-button-target="text">
-        What made you smile today?
-      </h4>
+  <div class="home-grid mt-5 d-flex flex-wrap">
+    <div class="card-home">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4" data-controller="inspire-button">
+          <button type="submit" class="btn btn-inspire btn-block" data-inspire-button-target="content" data-action="click->inspire-button#toggleText">
+            Inspire me...
+          </button>
+          <h4 class="text-center mb-4" id="inspireText" style="display: none;" data-inspire-button-target="text">
+            What made you smile today?
+          </h4>
 
-      <%= render 'joys/joy_form' %>
+          <%= render 'joys/joy_form' %>
 
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 
 <%# adding line of comment code to fix revert %>
