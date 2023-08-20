@@ -6,4 +6,9 @@ export default class extends Controller {
     console.log("hello")
     new StarRating(this.element)
   }
+
+  applyRating(){
+    //send details, which star I am on.
+    console.log(this.element)
+  }
 }

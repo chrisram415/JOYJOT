@@ -20,6 +20,8 @@ class RecommendationsController < ApplicationController
     # raise
     @recommendation = set_recommendations
     @user = current_user
+    # For the rating form
+    @rating = @recommendation.rating
     startdate = Date.today.prev_occurring(:friday)
     # enddate = startdate + 6.days
     enddate = startdate + 7.days
@@ -33,6 +35,16 @@ class RecommendationsController < ApplicationController
     # else
     @ave_rating = (joy_ratings.sum.to_f / joy_ratings.count).round(1)
     # end
+  end
+
+  def update
+    @recommendation = set_recommendations
+
+    if @recommendation.update(recommendation_params)
+      redirect_to @recommendation, notice: 'Rating was successfully updated.'
+    else
+      render :show
+    end
   end
 
   private

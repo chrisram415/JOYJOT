@@ -25,6 +25,13 @@
         <% end %>
       </div>
 
+      <div class="reco-info mt-4">
+        <%= simple_form_for @recommendation do |f| %>
+          <%= f.input :rating, collection: (1..5).to_a, label: "How was the recommendation?", input_html: { data: { controller: "star-rating" } } %>
+          <%= f.button :submit, "Rate", class: "btn btn-submit btn-block mt-3" %>
+        <% end %>
+      </div>
+
       <div class="mt-5 back-button">
         <%= link_to 'Back', recommendations_path, class: 'btn-back' %>
       </div>

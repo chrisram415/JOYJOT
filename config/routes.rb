@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # end
 
   resources :joys, only: [:new, :create, :index, :show]
-  resources :recommendations, only: [:index, :new, :create, :show]
+  resources :recommendations, only: [:index, :new, :create, :update, :show]
   resources :games, only: [:index, :show]
 
 end
