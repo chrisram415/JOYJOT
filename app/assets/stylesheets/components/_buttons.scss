@@ -19,23 +19,53 @@
   color: #fff;
 }
 
-.btn-inspire {
-  color: #353337;
-  border: 1px solid #9c94a4;
-  padding: 8px 24px;
-  border-radius: 50px;
-  opacity: 0.8;
-  transition: opacity 0.9s ease;
-  background: #a6d1ec;
-  font-weight: bold;
-  margin: 10px;
+.btn-img-inspire {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: none;
 }
 
-.btn-inspire:hover {
-  opacity: 1;
-  background: #9dbad8;
-  color: #1b171f;
+.small-icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 25px;
+  margin-left: 5px;
+  animation: pulse 2s infinite;
 }
+
+.btn-img-inspire:hover {
+  opacity: 0.8;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: 20%; /* Adjust the vertical position of the tooltip */
+  left: 100%; /* Adjust the horizontal position of the tooltip */
+  transform: translate(10px, -50%); /* Adjust the horizontal offset */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 12px;
+  font-size: 16px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  font-family:'Indie Flower', cursive;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 .btn-back {
   color: #353337;

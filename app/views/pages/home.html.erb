@@ -1,18 +1,20 @@
 <%# adding line of comment code to fix revert %>
 
 <div class="container mt-5">
-  <div class="row">
-    <div class="home-grid mt-5 d-flex flex-wrap">
-      <div class="card-home">
-        <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4" data-controller="inspire-button">
-          <button type="submit" class="btn btn-inspire btn-block" data-inspire-button-target="content" data-action="click->inspire-button#toggleText">
-            Inspire me...
-          </button>
-          <h5 class="text-center mb-4" id="inspireText" style="display: none;" data-inspire-button-target="text">
-            <%= @random_prompt %>
-          </h5>
-          <%= render 'joys/joy_form' %>
+  <div class="home-grid mt-5 d-flex flex-wrap">
+    <div class="card-home">
+      <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4" data-controller="inspire-button">
+        <!-- Replace the button with a smaller image and tooltip -->
+        <div class="tooltip-container">
+          <%= link_to '', class: 'btn-img-inspire btn-block', data: { inspire_button_target: 'content' }, 'data-action': 'click->inspire-button#toggleText' do %>
+            <%= image_tag 'rainbow.png', alt: 'Inspire Me', class: 'small-icon' %>
+          <% end %>
+          <div class="tooltip">Inspire me!</div>
         </div>
+        <h5 class="text-center mb-4" id="inspireText" style="display: none;" data-inspire-button-target="text">
+          <%= @random_prompt %>
+        </h5>
+        <%= render 'joys/joy_form' %>
       </div>
     </div>
   </div>
