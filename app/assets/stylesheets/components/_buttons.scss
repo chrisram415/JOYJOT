@@ -2,8 +2,8 @@
 
 
 .btn-submit {
-  color: #353337;
-  border: 1px solid #897d97;
+  color: #fff;
+  border: 1px solid #9c94a4;
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
@@ -16,12 +16,12 @@
 .btn-submit:hover {
   opacity: 1;
   background: #ddb5dfcd;
-  color: #1b171f;
+  color: #fff;
 }
 
 .btn-inspire {
   color: #353337;
-  border: 1px solid #897d97;
+  border: 1px solid #9c94a4;
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
@@ -39,7 +39,7 @@
 
 .btn-back {
   color: #353337;
-  border: 1px solid #897d97;
+  border: 1px solid #9c94a4;
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
@@ -61,25 +61,43 @@
   width: 100%; /* Occupy full width of the banner */
   display: flex;
   justify-content: center;
-  padding: 20px; /* Adjust as needed */
+  padding: 20px;
 }
 
 .btn-reco {
-  background: linear-gradient(to bottom, rgba(255, 195, 227, 0.8), rgba(255, 179, 209, 0.8));  /* Example gradient colors */
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 12px;
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #9c94a4;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: opacity 0.9s ease;
+  background: #eca6af;
+  font-weight: bold;
+  font-size: 14px;
+  align-content: middle;
+  animation: pulse 2s infinite;
 }
 
 .btn-reco:hover {
-  background-color: #eca6af;; /* Slightly lighter pink on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  background: #ddb5dfcd;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #ffff;
   font-weight: bolder;
+  opacity: 1; /* Set it back to 1 on hover */
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 // <%# adding line of comment code to fix revert %>

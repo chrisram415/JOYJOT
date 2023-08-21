@@ -1,12 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
-      <h4 class="text-center mb-4" id="inspireText" style="display: none;">What made you smile today?</h4>
-      <%= simple_form_for @joy do |f| %>
-        <%= f.input :description, input_html: { placeholder: "Tell us your joy..." }, label: false %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "How happy were you?", input_html: { data: { controller: "star-rating" } } %>
-        <%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mt-3" %>
-      <% end %>
-    </div>
+<%= simple_form_for @joy, html: { novalidate: true } do |f| %>
+  <%= f.input :description, input_html: {
+    placeholder: "Tell us your joy...",
+    required: true,
+    style: "background-color: #fff3f8; border-radius: 15px;"
+  }, label: false %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Joy rating meter:", input_html: { data: { controller: "star-rating" }, required: true } %>
+  <div class="d-flex justify-content-center">
+    <%= f.button :submit, "Add your joy!", class: "btn btn-submit mt-3" %>
   </div>
-</div>
+<% end %>

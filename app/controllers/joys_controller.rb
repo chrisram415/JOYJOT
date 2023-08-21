@@ -21,17 +21,23 @@ class JoysController < ApplicationController
     @joy.user = current_user
     @joy.fortune = @response # Assign the OpenAI response to the 'fortune' attribute
     if @joy.save
+      GamecardJob.perform_now(@joy)
       redirect_to joy_path(@joy)
     else
       flash[:alert] = 'Something went wrong.'
-      render :new
+      # render :new
+      redirect_to new_joy_path
     end
+
   end
 
 
 
   def index
     @joys = current_user.joys.all
+    @joys.each do |joy|
+      joy.rating ||= 0 # Set a default value of 0 if rating is nil
+    end
   end
 
   def show
