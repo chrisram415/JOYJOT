@@ -1,10 +1,11 @@
 <%= simple_form_for @joy, html: { novalidate: true } do |f| %>
   <%= f.input :description, input_html: {
-    placeholder: "Tell us your joy...",
-    required: true,
-    style: "background-color: #fff3f8; border-radius: 15px;"
-  }, label: false %>
-  <%= f.input :rating, collection: (1..5).to_a, label: "Joy rating meter:", input_html: { data: { controller: "star-rating" }, required: true } %>
+  placeholder: "Unwrap your joyful moment...",
+  required: true,
+  class: "custom-placeholder-color",
+  style: "background-color: #fff3f8; border-radius: 15px;"
+}, label: false %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Joystar rater:", input_html: { data: { controller: "star-rating" }, required: true } %>
   <div class="d-flex justify-content-center">
     <%= f.button :submit, "Add your joy!", class: "btn btn-submit mt-3" %>
   </div>

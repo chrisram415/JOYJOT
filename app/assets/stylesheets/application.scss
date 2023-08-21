@@ -74,3 +74,15 @@ h5 {
   font-style: italic;
   font-size: 14px;
 }
+
+.custom-placeholder-color::placeholder {
+  color: #756873;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Style for the entered text */
+.custom-placeholder-color:not(:placeholder-shown) {
+  color: black;
+  font-style: normal;
+}
