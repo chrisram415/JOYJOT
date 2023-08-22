@@ -2,42 +2,74 @@
 
 
 .btn-submit {
-  color: #353337;
-  border: 1px solid #897d97;
+  color: #fff;
+  border: 1px solid #9c94a4;
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
   transition: opacity 0.9s ease;
   background: #eca6af;
   font-weight: bold;
+  align-content: middle;
 }
 
 .btn-submit:hover {
   opacity: 1;
   background: #ddb5dfcd;
-  color: #1b171f;
+  color: #fff;
 }
 
-.btn-inspire {
-  color: #353337;
-  border: 1px solid #897d97;
-  padding: 8px 24px;
-  border-radius: 50px;
+.btn-img-inspire {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.small-icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 25px;
+  margin-left: 5px;
+  animation: pulse 2s infinite;
+}
+
+.btn-img-inspire:hover {
   opacity: 0.8;
-  transition: opacity 0.9s ease;
-  background: #a6d1ec;
-  font-weight: bold;
 }
 
-.btn-inspire:hover {
-  opacity: 1;
-  background: #9dbad8;
-  color: #1b171f;
+.tooltip-container {
+  position: relative;
+  display: inline-block;
 }
+
+.tooltip {
+  position: absolute;
+  top: 20%; /* Adjust the vertical position of the tooltip */
+  left: 100%; /* Adjust the horizontal position of the tooltip */
+  transform: translate(10px, -50%); /* Adjust the horizontal offset */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 12px;
+  font-size: 16px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  font-family:'Indie Flower', cursive;
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 .btn-back {
   color: #353337;
-  border: 1px solid #897d97;
+  border: 1px solid #9c94a4;
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
@@ -53,18 +85,49 @@
   color: #1b171f;
 }
 
-.btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 4px 10px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.5;
-  transition: opacity 0.8s ease;
+.button-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* Occupy full width of the banner */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-.btn-ghost:hover {
-  opacity: .8;
+.btn-reco {
+  color: #fff;
+  border: 1px solid #9c94a4;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: opacity 0.9s ease;
+  background: #eca6af;
+  font-weight: bold;
+  font-size: 14px;
+  align-content: middle;
+  animation: pulse 2s infinite;
 }
+
+.btn-reco:hover {
+  background: #ddb5dfcd;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #ffff;
+  font-weight: bolder;
+  opacity: 1; /* Set it back to 1 on hover */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 // <%# adding line of comment code to fix revert %>

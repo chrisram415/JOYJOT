@@ -1,5 +1,18 @@
 /* recommendation index */
 
+.card-home {
+  border-radius: 10px;
+  width: 600px;
+  height: 350px;
+  overflow: hidden;
+  color: #675764;
+  margin: 10px;
+  transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #ffff;
+  padding: 20px;
+}
+
 .card-reco {
   border-radius: 10px;
   width: 550px;
