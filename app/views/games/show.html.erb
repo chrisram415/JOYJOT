@@ -1,0 +1,35 @@
+<!--
+
+solved_cards = 0
+
+WHILE @game.completed == false
+
+  randomly display ONE image @game.gamecards.image_url <img href=#{gamecard.image_url}>
+
+  display all 5 job descriptions
+
+
+  user can click on the image they think matches the joy description at the top.
+    IF not a match
+      the image shakes on the spot.
+      User picks another image
+    ELSE
+      the image is removed from carousel with a "card unlocked!" message
+      @gamecard.update(solved: true)
+      solved_cards += 1
+      @game.update(completed: true) if solved_cards == 5
+
+
+-->
+
+
+<img src= <%= "#{@current_gamecard.image_url}" %>>
+
+<%#= link_to "@game" %>
+<% @game.joys.each do |joy| %>
+  <% if @current_gamecard.joy == joy %>
+    <%= link_to joy.description, correctanswer_path(:solved => true, :gamecard => @current_gamecard.id) %>
+  <% end %>
+    # show joy description only if the joy's gamecard is not solved
+  <p><%= joy.description %></p>
+<% end %>
