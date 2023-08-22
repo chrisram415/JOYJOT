@@ -79,11 +79,22 @@ h5 {
 .custom-placeholder-color::placeholder {
   color: #756873;
   font-style: italic;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 /* Style for the entered text */
 .custom-placeholder-color:not(:placeholder-shown) {
   color: black;
   font-style: normal;
+}
+
+/* Style for the inspiration message animation on homepage */
+#inspire-prompt {
+  opacity: 0; /* Initially set to invisible */
+  transition: opacity 1.5s ease-in-out; /* Add a smooth transition */
+}
+
+/* Trigger the fade-in animation when the element becomes visible */
+#inspireText.visible {
+  opacity: 1;
 }
