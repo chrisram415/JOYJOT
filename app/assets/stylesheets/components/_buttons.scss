@@ -1,5 +1,6 @@
 // <%# adding line of comment code to fix revert %>
 
+/* submit button */
 
 .btn-submit {
   color: #fff;
@@ -19,6 +20,15 @@
   color: #fff;
 }
 
+/* rate button */
+
+.rating-and-submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* inspire me button with icon */
 .btn-img-inspire {
   width: 100%;
   cursor: pointer;
@@ -92,6 +102,8 @@
   color: #1b171f;
 }
 
+/* banner Friday reco button */
+
 .button-container {
   position: absolute;
   bottom: 0;
@@ -121,8 +133,10 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #ffff;
   font-weight: bolder;
-  opacity: 1; /* Set it back to 1 on hover */
+  opacity: 1;
 }
+
+/* animation for inspire button/icon */
 
 @keyframes tooltip-pulse {
   0% {
@@ -135,6 +149,8 @@
     transform: scale(1);
   }
 }
+
+/* animation for Friday reco button */
 
 @keyframes pulse {
   0% {

@@ -65,8 +65,24 @@ h4 {
 h5 {
   font-family: 'Comic Sans MS', cursive;
   font-size: 20px;
+  font-weight: bold; /* Added to make the text bolder */
   color: #7BAAD6;
+  padding-bottom: 15px;
+  text-align: center;
+  position: relative; /* Added to position the line */
 }
+
+h5::after {
+  content: "";
+  display: block;
+  width: 100%; /* Line width */
+  height: 1px; /* Line height */
+  background-color: #7BAAD6; /* Blue line color */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 
 
 .date {
