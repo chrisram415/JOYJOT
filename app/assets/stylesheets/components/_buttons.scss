@@ -102,6 +102,20 @@
   color: #1b171f;
 }
 
+/* animation for inspire button/icon */
+
+@keyframes tooltip-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* banner Friday reco button */
 
 .button-container {
@@ -119,8 +133,8 @@
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
-  transition: opacity 0.9s ease;
-  background: #eca6af;
+  transition: opacity 0.8s ease;
+  background: #F791A9;
   font-weight: bold;
   font-size: 14px;
   align-content: middle;
@@ -134,20 +148,6 @@
   color: #ffff;
   font-weight: bolder;
   opacity: 1;
-}
-
-/* animation for inspire button/icon */
-
-@keyframes tooltip-pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 /* animation for Friday reco button */
