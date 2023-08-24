@@ -1,5 +1,6 @@
 // <%# adding line of comment code to fix revert %>
 
+/* submit button */
 
 .btn-submit {
   color: #fff;
@@ -19,6 +20,15 @@
   color: #fff;
 }
 
+/* rate button */
+
+.rating-and-submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* inspire me button with icon */
 .btn-img-inspire {
   width: 100%;
   cursor: pointer;
@@ -32,7 +42,7 @@
   height: 55px;
   margin-bottom: 25px;
   margin-left: 5px;
-  animation: pulse 2s infinite;
+  animation: tooltip-pulse 2s infinite;
 }
 
 .btn-img-inspire:hover {
@@ -44,28 +54,35 @@
   display: inline-block;
 }
 
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .tooltip {
   position: absolute;
-  top: 20%; /* Adjust the vertical position of the tooltip */
-  left: 100%; /* Adjust the horizontal position of the tooltip */
-  transform: translate(10px, -50%); /* Adjust the horizontal offset */
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  top: 15%;
+  left: 110%; /* Position the tooltip to the right of the icon */
+  transform: translateY(-50%);
+  background-color: #FEF5EB;
+  border: 1px solid #000000;
   border-radius: 50px;
-  padding: 12px;
-  font-size: 16px;
+  padding: 8px 12px;
+  font-size: 14px;
   white-space: nowrap;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
-  font-family:'Indie Flower', cursive;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s;
+  font-family: 'Indie Flower', cursive;
+  color: #000000;
+  animation: tooltip-pulse 2s infinite;
 }
 
 .tooltip-container:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
+  opacity: 0.8;
 }
-
 
 .btn-back {
   color: #353337;
@@ -85,12 +102,32 @@
   color: #1b171f;
 }
 
+/* animation for inspire button/icon */
+
+@keyframes tooltip-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* banner Friday reco button */
+
 .button-container {
-  position: absolute;
-  bottom: 0;
-  width: 100%; /* Occupy full width of the banner */
+  width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 20px;
 }
 
@@ -100,22 +137,24 @@
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
-  transition: opacity 0.9s ease;
-  background: #eca6af;
+  transition: opacity 0.8s ease;
+  background: #83b7e5;
   font-weight: bold;
   font-size: 14px;
-  align-content: middle;
   animation: pulse 2s infinite;
+  /* Remove align-content and animation properties from here */
 }
 
 .btn-reco:hover {
-  background: #ddb5dfcd;
+  background: #5c9cc4;
   transform: scale(1.05);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #ffff;
   font-weight: bolder;
-  opacity: 1; /* Set it back to 1 on hover */
+  opacity: 0.9;
 }
+
+/* animation for Friday reco button */
 
 @keyframes pulse {
   0% {
@@ -128,6 +167,5 @@
     transform: scale(1);
   }
 }
-
 
 // <%# adding line of comment code to fix revert %>

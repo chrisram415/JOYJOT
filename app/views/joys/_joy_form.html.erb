@@ -1,12 +1,26 @@
 <%= simple_form_for @joy, html: { novalidate: true } do |f| %>
   <%= f.input :description, input_html: {
-  placeholder: "Unwrap your joyful moment...",
-  required: true,
-  class: "custom-placeholder-color",
-  style: "background-color: #fff3f8; border-radius: 15px;"
-}, label: false %>
+    placeholder: "Unwrap your joyful moment...",
+    required: true,
+    class: "custom-placeholder-color",
+    style: "background-color: #fff3f8; border-radius: 15px;",
+    onfocus: "clearPlaceholder(this)",
+    onblur: "restorePlaceholder(this)"
+  }, label: false %>
   <%= f.input :rating, collection: (1..5).to_a, label: "Joystar rater:", input_html: { data: { controller: "star-rating" }, required: true } %>
   <div class="d-flex justify-content-center">
     <%= f.button :submit, "Add your joy!", class: "btn btn-submit mt-3" %>
   </div>
 <% end %>
+
+<script>
+  function clearPlaceholder(input) {
+    input.placeholder = "";
+  }
+
+  function restorePlaceholder(input) {
+    if (!input.value.trim()) {
+      input.placeholder = "Unwrap your joyful moment...";
+    }
+  }
+</script>
