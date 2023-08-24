@@ -138,21 +138,20 @@
   border-radius: 50px;
   opacity: 0.8;
   transition: opacity 0.8s ease;
-  background: #F791A9;
+  background: #83b7e5;
   font-weight: bold;
   font-size: 14px;
   animation: pulse 2s infinite;
   /* Remove align-content and animation properties from here */
 }
 
-
 .btn-reco:hover {
-  background: #ddb5dfcd;
+  background: #5c9cc4;
   transform: scale(1.05);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #ffff;
   font-weight: bolder;
-  opacity: 1;
+  opacity: 0.9;
 }
 
 /* animation for Friday reco button */
