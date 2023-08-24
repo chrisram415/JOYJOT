@@ -9,9 +9,9 @@
   transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
-  padding: 20px;
-  margin-top: 50px;
-  margin-bottom: 60px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .card-reco {
@@ -23,7 +23,7 @@
   transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
-  padding: 20px;
+  padding: 10px;
   padding-bottom: 10px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .card-reco-body {
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
 }
 
@@ -70,7 +70,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
   padding: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 a {
