@@ -119,11 +119,15 @@
 /* banner Friday reco button */
 
 .button-container {
-  position: absolute;
-  bottom: 0;
-  width: 100%; /* Occupy full width of the banner */
+  width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 20px;
 }
 
@@ -137,9 +141,10 @@
   background: #F791A9;
   font-weight: bold;
   font-size: 14px;
-  align-content: middle;
   animation: pulse 2s infinite;
+  /* Remove align-content and animation properties from here */
 }
+
 
 .btn-reco:hover {
   background: #ddb5dfcd;

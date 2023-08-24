@@ -6,11 +6,12 @@
   height: 350px;
   overflow: hidden;
   color: #675764;
-  margin: 10px;
   transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
   padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 
 .card-reco {
