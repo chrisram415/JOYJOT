@@ -1,13 +1,15 @@
-<div class="banner" style="background-image: url(<%= image_path('rainbow.jpg') %>)">
-  <div class="container">
-    <h1 class="text-center">JOYJOT</h1>
+<% if controller_name == "pages" && action_name == "home" %>
+  <div class="banner" style="background-image: url(<%= image_path('rainbow.jpg') %>)">
+    <div class="container">
+      <h1 class="text-center">JOYJOT</h1>
       <div class="right-firefly1"></div>
       <div class="right-firefly2"></div>
       <div class="middle-firefly"></div>
       <div class="upper-right-firefly"></div>
 
-    <div class="button-container">
-      <a class="btn btn-reco" href="/recommendations">Fri-Yay! Joy awaits: check your recs!</a>
+      <div class="button-container">
+        <a class="btn btn-reco" href="/recommendations">Fri-Yay! Joy awaits: check your recs!</a>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
