@@ -51,20 +51,17 @@
 
 .tooltip-container {
   position: relative;
-  display: inline-block;
+  display: inline-block; /* Use inline-block to wrap the icon and tooltip */
 }
 
 .icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
 
 .tooltip {
   position: absolute;
-  top: 15%;
-  left: 110%; /* Position the tooltip to the right of the icon */
+  top: 40%;
+  left: calc(100% + 10px); /* Adjust the distance from the icon */
   transform: translateY(-50%);
   background-color: #FEF5EB;
   border: 1px solid #000000;
