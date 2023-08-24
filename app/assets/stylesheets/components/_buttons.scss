@@ -1,43 +1,92 @@
 // <%# adding line of comment code to fix revert %>
 
+/* submit button */
 
 .btn-submit {
-  color: #353337;
-  border: 1px solid #897d97;
+  color: #fff;
+  border: 1px solid #9c94a4;
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
   transition: opacity 0.9s ease;
   background: #eca6af;
   font-weight: bold;
+  align-content: middle;
 }
 
 .btn-submit:hover {
   opacity: 1;
   background: #ddb5dfcd;
-  color: #1b171f;
+  color: #fff;
 }
 
-.btn-inspire {
-  color: #353337;
-  border: 1px solid #897d97;
-  padding: 8px 24px;
-  border-radius: 50px;
+/* rate button */
+
+.rating-and-submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* inspire me button with icon */
+.btn-img-inspire {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.small-icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 25px;
+  margin-left: 5px;
+  animation: tooltip-pulse 2s infinite;
+}
+
+.btn-img-inspire:hover {
   opacity: 0.8;
-  transition: opacity 0.9s ease;
-  background: #a6d1ec;
-  font-weight: bold;
 }
 
-.btn-inspire:hover {
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: 15%;
+  left: 110%; /* Position the tooltip to the right of the icon */
+  transform: translateY(-50%);
+  background-color: #FEF5EB;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  padding: 8px 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  visibility: visible;
   opacity: 1;
-  background: #9dbad8;
-  color: #1b171f;
+  transition: opacity 0.3s;
+  font-family: 'Indie Flower', cursive;
+  color: #000000;
+  animation: tooltip-pulse 2s infinite;
+}
+
+.tooltip-container:hover .tooltip {
+  opacity: 0.8;
 }
 
 .btn-back {
   color: #353337;
-  border: 1px solid #897d97;
+  border: 1px solid #9c94a4;
   padding: 8px 24px;
   border-radius: 50px;
   opacity: 0.8;
@@ -53,18 +102,70 @@
   color: #1b171f;
 }
 
-.btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 4px 10px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.5;
-  transition: opacity 0.8s ease;
+/* animation for inspire button/icon */
+
+@keyframes tooltip-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.btn-ghost:hover {
-  opacity: .8;
+/* banner Friday reco button */
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.btn-reco {
+  color: #fff;
+  border: 1px solid #9c94a4;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: opacity 0.8s ease;
+  background: #83b7e5;
+  font-weight: bold;
+  font-size: 14px;
+  animation: pulse 2s infinite;
+  /* Remove align-content and animation properties from here */
+}
+
+.btn-reco:hover {
+  background: #5c9cc4;
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #ffff;
+  font-weight: bolder;
+  opacity: 0.9;
+}
+
+/* animation for Friday reco button */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 // <%# adding line of comment code to fix revert %>

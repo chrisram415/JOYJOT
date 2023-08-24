@@ -18,5 +18,14 @@
 }
 
 .navbar-nav > li:hover {
-  border-color: rgb(146, 146, 146);
+  border-color: #fd7897;
+}
+
+.navbar-nav .nav-link {
+  color: #675764;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fd7897;
 }
