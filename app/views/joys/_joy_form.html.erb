@@ -10,7 +10,7 @@
   }, label: false %>
   <%= f.input :rating, collection: (1..5).to_a, label: "Joystar rater:", input_html: { data: { controller: "star-rating" }, required: true } %>
   <div class="d-flex justify-content-center">
-    <%= f.button :submit, "Add your joy!", class: "btn btn-submit mt-3, "data-toggle": "modal", "data-target": ".bd-example-modal-lg" " %>
+    <%= f.button :submit, "Add your joy!", class: "btn btn-submit mt-3", "data-toggle": "modal", "data-target": ".bd-example-modal-lg"  %>
     <%#<%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mt-3", "data-toggle": "modal", "data-target": ".bd-example-modal-lg" %>
   </div>
 <% end %>
