@@ -10,10 +10,10 @@
           <% @solved_gamecards.each_with_index do |gamecard, index| %>
             <div class="carousel-item <%= 'active' if index == 0 %>">
               <div class="card-carousel">
-                  <div class="card-text">
-                    <p><%= gamecard.image_url %></p>
-                    <p><%= gamecard.joy.description %></p>
-                  </div>
+                <div class="card-text">
+                  <p><%= gamecard.image_url %></p>
+                  <p><%= gamecard.joy.description %></p>
+                </div>
               </div>
             </div>
           <% end %>
