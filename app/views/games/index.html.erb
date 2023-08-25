@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="description mt-5">
+    <h2>Your games</h2>
+  </div>
+
+  <div class="home-grid mt-5 d-flex flex-wrap">
+    <% if @games.any? %>
+      <% @games.each do |game| %>
+        <a href="<%= game_path(game.id) %>" class="card-reco">
+          <div class="card-reco-body">
+            <div class="card-text">
+              <p class="responsive-truncate">Completion: <%= game.completed %></p>
+              <p class="date"><%= game.created_at.strftime('%Y-%m-%d') %></p>
+            </div>
+          </div>
+        </a>
+      <% end %>
+    <% else %>
+      <p>You don't have any game yet.</p>
+    <% end %>
+  </div>
+</div>
