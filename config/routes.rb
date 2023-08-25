@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :joys, only: [:new, :create, :index, :show]
   resources :recommendations, only: [:index, :new, :create, :update, :show]
   resources :games, only: [:index, :show]
-
+  get "/correctanswer", to: "gamecards#correctanswer"
+  resources :gamecards, only: [:index]
 end

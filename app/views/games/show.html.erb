@@ -1,0 +1,23 @@
+<% if @game.completed == true %>
+  <h2 class="text-center">Game Completed!</h2>
+  <h4 class="text-center"><%= link_to "See My Cards", gamecards_path %></h4>
+<% else %>
+  <!-- display one gamecard image at random-->
+  <img src="<%= @current_gamecard.image_url %>" class="mobile-friendly-image">
+
+  <!-- for each of the 5 joys (each associated w/ a gamecard) in the game:
+        1. the joy description that matches that of the shown image is coded as a link.
+           update the @current_gamecard "solved" when link is clicked
+          Reload page
+        2. show the other joy descriptions, but only if the joy's gamecard is not solved -->
+  <% @game.joys.each do |joy| %>
+    <div class="joy-choice">
+      <% if joy == @current_gamecard.joy  %>
+        <%= link_to joy.description, correctanswer_path(:solved => true, :gamecard => @current_gamecard.id), class: "text-link"%>
+      <% end %>
+      <% if !joy.gamecard.solved && joy != @current_gamecard.joy%>
+        <p><%= joy.description %></p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
