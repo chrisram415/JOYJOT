@@ -8,22 +8,32 @@
 </div>
 
 
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4" data-controller="inspire-button">
-      <button type="submit" class="btn btn-inspire btn-block" data-inspire-button-target="content" data-action="click->inspire-button#toggleText">
-        Inspire me...
-      </button>
-      <h4 class="text-center mb-4" id="inspireText" style="display: none;" data-inspire-button-target="text">
-        <%= @random_prompt %>
-      </h4>
-
-      <%= render 'joys/joy_form' %>
-
+<body class="body-homepage">
+  <div class="container">
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="card-home">
+        <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4" data-controller="inspire-button">
+          <div class="tooltip-container">
+            <div class="icon-container">
+              <%= image_tag 'rainbow.png', alt: 'Inspire Me', class: 'small-icon' %>
+            </div>
+            <%= link_to '', class: 'btn-img-inspire', data: { inspire_button_target: 'content' }, 'data-action': 'click->inspire-button#toggleText' do %>
+              <div class="tooltip-inspire-me">Inspire me!</div>
+            <% end %>
+          </div>
+          <div class="tooltip-container">
+            <div class="icon-container">
+              <p class="text-center d-none tooltip-prompt card-text" id="inspireText visible" data-inspire-button-target="text">
+                <%= @random_prompt %>
+              </p>
+            </div>
+          </div>
+          <%= render 'joys/joy_form' %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 
 <%# code for the cookies are baking %>
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

@@ -9,8 +9,9 @@ export default class extends Controller {
     console.log("Hiii")
   }
 
-  toggleText() {
-    this.contentTarget.classList.add("d-none");
-    this.textTarget.style.display = "block";
+  toggleText(e) {
+    e.preventDefault();
+    this.contentTarget.classList.toggle("d-none");
+    this.textTarget.classList.toggle("d-none");
   }
 }

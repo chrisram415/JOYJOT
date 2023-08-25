@@ -1,0 +1,5 @@
+.mobile-friendly-image {
+  max-width: 100%; // Ensures the image doesn't exceed its container
+  height: auto;    // Maintains aspect ratio while adjusting width
+  border-radius: 24px; // Adds rounded corners to the image
+}

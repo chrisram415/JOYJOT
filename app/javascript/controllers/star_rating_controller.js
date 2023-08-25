@@ -4,7 +4,12 @@ import StarRating from "star-rating.js"
 export default class extends Controller {
   connect() {
     console.log("hello")
-    new StarRating(this.element)
+    new StarRating(this.element, { tooltip: false })
+  }
+
+  applyRating(){
+    //send details, which star I am on.
+    console.log(this.element)
   }
 
   applyRating(){
