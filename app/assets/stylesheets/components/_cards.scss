@@ -81,3 +81,25 @@ a {
   border: none;
   box-shadow: none;
 }
+
+.card-carousel {
+  border-radius: 10px;
+  width: 350px;
+  height: 400px;
+  overflow: hidden;
+  color: #675764;
+  transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #ffff;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #F691A9;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+  }
