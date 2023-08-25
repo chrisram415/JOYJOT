@@ -10,12 +10,12 @@
               <%= image_tag 'rainbow.png', alt: 'Inspire Me', class: 'small-icon' %>
             </div>
             <%= link_to '', class: 'btn-img-inspire', data: { inspire_button_target: 'content' }, 'data-action': 'click->inspire-button#toggleText' do %>
-              <div class="tooltip">Inspire me!</div>
+              <div class="tooltip-inspire-me">Inspire me!</div>
             <% end %>
           </div>
           <div class="tooltip-container">
             <div class="icon-container">
-              <p class="text-center d-none tooltip" id="inspireText visible" data-inspire-button-target="text">
+              <p class="text-center d-none tooltip-prompt card-text" id="inspireText visible" data-inspire-button-target="text">
                 <%= @random_prompt %>
               </p>
             </div>
