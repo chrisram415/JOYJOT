@@ -7,8 +7,27 @@
     <div class="container mt-4">
       <div class="home-grid mt-5 d-flex flex-wrap">
         <div class="card-reco-show">
-          <div class="fortune-cookie">
-            <p><strong>My Fortune Cookie:</strong> <%= @joy.fortune %></p>
+          <div class="fortune-cookie" data-controller="fortune-cookie" >
+            <p><strong>My Fortune Cookie:</strong> <%#<%= @joy.fortune %></p>
+            <%# NEW CODE testing: lines 17 -25 %>
+            <%# fortune cookie code %>
+            <%= turbo_frame_tag 'fortune' do %>
+
+              <div class= "container mt-5">
+                <div class="fortune-cookie-container">
+                  <div class="fortune-wrapper" data-action="load->fortune-cookie#rotateFortune">
+                    <div class="fortune" data-fortune-cookie-target="fortune">
+                      <div class= "cookie">
+                        <div class="fortune-left" data-fortune-cookie-target="fortuneLeft"></div>
+                        <div class="fortune-right" data-fortune-cookie-target="fortuneRight"></div>
+                      </div>
+                      <div class="fortune-message" data-fortune-cookie-target="fortuneMessage"><span> <%= @joy.fortune %></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
           </div>
         </div>
 
@@ -27,3 +46,5 @@
     </div>
   </div>
 </div>
+
+<!-- Small modal -->

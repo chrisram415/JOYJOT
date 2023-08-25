@@ -8,22 +8,46 @@ class PagesController < ApplicationController
   def home
     @joy = Joy.new
 
-    # codes so it will not run code again if ran already
-    # dvelopment version, Check if the current day is Thursday, Friday, Saturday, or Sunday
-    if [Time.now.thursday?, Time.now.friday?, Time.now.saturday?, Time.now.sunday?].any?
-      # final version for only friday of calling the mthod below but only triggers once every friday anytime user arrives to home
-      # if Time.now.friday? && Time.now.hour >= 0
-      unless session[:weekly_task_executed]
-        run_weekly_task
-        session[:weekly_task_executed] = true
+    # if user_signed_in?  # Check if a user is signed in
+    #     # Your existing code to check the day and execute the weekly task
+    #   # codes so it will not run code again if ran already
+    #   # dvelopment version, Check if the current day is Thursday, Friday, Saturday, or Sunday
+    #   if [Time.now.thursday?, Time.now.friday?, Time.now.saturday?, Time.now.sunday?].any?
+    #     # final version for only friday of calling the mthod below but only triggers once every friday anytime user arrives to home
+    #     # if Time.now.friday? && Time.now.hour >= 0
+    #     unless session[:weekly_task_executed]
+    #       run_weekly_task
+    #       session[:button_triggered] = true
+    #     end
+    #   else
+    #     session[:button_triggered] = false
+    #   end
+    # end
+
+    if user_signed_in?
+      # Check if the current day is Friday or Saturday
+      if [Time.now.friday?, Time.now.saturday?].any?
+        unless session[:weekly_task_executed]
+          run_weekly_task
+          session[:weekly_task_executed] = true
+        end
+      else
+        session[:weekly_task_executed] = false
       end
-    else
-      session[:weekly_task_executed] = false
     end
+
+    # # test recommendations each time home loads code: (uncomment line below)
+    # run_weekly_task
 
     # <%# 1 inspire per joy so we will create a variable that stores the result of selecting a premade string at random
     # add variable in pages/home method controller to view and display
     @random_prompt = select_random_prompt
+
+    # code for button to be triggered to display only if the create rec mehtod was created
+    # and if the button was noit previous clicked, meaning it only appears once
+    # @weekly_task_executed = session[:weekly_task_executed] # Set instance variable
+    # instance variable that dtetermine if button triggered or not by checking the session
+    @button_triggered = session[:button_triggered] || false
   end
 
 
@@ -42,9 +66,9 @@ class PagesController < ApplicationController
 
     descriptions = @joys.map { |joy| joy.description }
 
-    @response = OpenaiService.new("You are JoyJot, a cheerful motivational chatbot friend. I will provide you with an array of strings about my joys from this week, and it will be your job to come up with strategies that can help me achieve further happiness, max 100 words. Only do one of the following: If the request contains strings, suggest 2 activities I can do this weekend to continue feeling joy. Otherwise, provide 3 ideas on how to find joy.
+    @response = OpenaiService.new("You are JoyJot, a cheerful motivational chatbot friend. Your task is to craft 1 action based on the following parameters, within a 100-words, including emojis, as a list. If my collection contains joys this week, only recommend 2 weekend activities based on them to amplify my joy. But if my collection is empty, suggest 3 methods to discover happiness.
 
-      The following request is an array of strings detailing things that brought me joy this week: #{descriptions}").call
+      Here's my collection: #{descriptions}").call
 
     # @response = OpenaiService.new("You are JoyJot, a cheerful motivational chatbot friend. count how many strings I have in this array and tell me the number and a joke: #{descriptions}").call
     @my_reccomendation = Recommendation.new
@@ -52,6 +76,8 @@ class PagesController < ApplicationController
     @my_reccomendation.activity = @response # Assign the OpenAI response to the 'fortune' attribute
     # @my_reccomendation.activity = descriptions
     @my_reccomendation.save
+
+    session[:button_triggered] = true # Set this session variable to true to show the button
   end
 
   # @inspire = array 50 strings %>

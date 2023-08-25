@@ -1,0 +1,174 @@
+/* Center the container horizontally */
+.fortune-cookie-container {
+  display: flex;
+  justify-content: center;
+}
+
+// testing
+
+.fortune-wrapper{
+  // // width:600px;
+  // // height:400px;
+  // display:block;
+  // background-color:deeppink;
+  // padding:50px;
+  // // max-width: 80%; /* Adjust as needed */
+  // margin: 0 auto; /* Center horizontally */
+  display: block;
+  background-color: #32c3ff8f;
+  padding: 20px;
+  // width: 1000px;
+  // height: 117px;
+  border-radius: 17px;
+  margin: 11px auto;
+}
+.fortune{
+  width:500px;
+  max-width: 100vw;
+  height:200px;
+  display:grid;
+  grid-template-columns: 1fr;
+  // position:absolute;
+  // transform-origin:40% 50%;
+  //border:1px solid white;
+  // top: 120px;
+  // top: 540px;
+  // left: 150px;
+  // left: -50px;
+  // transform:rotate(-10deg);
+  transform:rotate(-15deg);
+  align-items: center;
+
+}
+
+// .fortune div{
+//   grid-row-start: 1;
+//   grid-column-start: 1;
+// }
+
+.fortune-left{
+  // width:30%;
+  // height:30%;
+  width: 200%;
+  height: 200%;
+  // max-width: 30%;
+  // max-height: 30%;
+  // position:absolute;
+  // left:0;
+  // left: -205px;
+  background-image:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/77607/cookie-left.png");
+  background-repeat:no-repeat;
+  background-position:right center;
+  //border:1px solid red;
+  z-index:1;
+  // background-size: 30%;
+  background-size: 70%;
+}
+.fortune-right{
+  // width:30%;
+  // height:30%;
+  width: 200%;
+  height: 200%;
+  // max-width: 30%;
+  // max-height: 30%;
+  // position:absolute;
+  // left:190px;
+  // left: -15px;
+  background-image:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/77607/cookie-right.png");
+  background-position:20px 20px;
+  background-repeat:no-repeat;
+  background-position:left center;
+  //border:1px solid yellow;
+  z-index:3;
+  overflow: hidden;
+  // background-size: 30%;
+  background-size: 86%;
+}
+
+.cookie{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fortune-message{
+    // display: none;
+  //   display: block;
+  //   position: absolute;
+  //   left: -150px;
+  //   right: 180px;
+  //   font-family: courier;
+  //   font-size: 16px; /* Adjust the font size as needed */
+  //   top: 50px;
+  //   bottom: 80px;
+  //   font-style: italic;
+  //   z-index: 2;
+  //   overflow: hidden;
+    // border: 1px solid green;
+  //   -webkit-transform: rotateZ(8deg);
+  //   transform: rotateZ(8deg);
+    // new
+    // display: none;
+    display: block;
+    // position: absolute;
+    max-width: 50vw;
+    // left: -149px;
+    // right: 180px;
+    font-family: courier;
+    font-size: 16px;
+    // top: 29px;
+    // bottom: -749px;
+    font-style: italic;
+    z-index: 5;
+    // overflow: hidden;
+    position: relative;
+    transform: rotateZ(15deg);
+    -webkit-transform: rotateZ(15deg);
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+  span{
+    // display:block;
+    // background-color: #fff;
+    // padding: 8px 65px 7px 15px;
+    // white-space: nowrap;
+    // // font-size: small;
+    // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    // transform-origin:right bottom;
+    // position:absolute;
+    // bottom: 20px;
+    // right: 10px;
+    // new:
+    display: block;
+    background-color: #fff;
+    // padding: 10px 64px 10px 105px;
+    white-space: pre-wrap;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    transform-origin: right bottom;
+    position: absolute;
+    // bottom: auto;
+    // right: auto;
+
+    left: 53px;
+    right: -125px;
+    bottom: auto;
+    top: -90px;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.fortune-message.active {
+  /* Adjust size and position for the active state */
+  display: block; /* Display when active */
+  transform: rotateZ(15deg) scale(1.1); /* Increase scale for growth */
+  // span {
+  //   // font-size: 12px; /* Adjust the font size for the active state */
+  //   // bottom: 40px; /* Adjust bottom position for growth */
+  //   // right: 20px; /* Adjust right position for growth */
+  //   // padding: 0px 0px 0px 0px; /* Adjust padding for growth */
+  // }
+}
