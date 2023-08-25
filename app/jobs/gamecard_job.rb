@@ -5,11 +5,11 @@ class GamecardJob < ApplicationJob
     game =
       if Game.where(user_id: joy.user_id).last.gamecards.count == 5
         # send notification that new game is available?
-        Game.new(user_id: joy.user_id)
+        Game.create(user_id: joy.user_id)
       else
         Game.where(user_id: joy.user_id).last
       end
-    card = Gamecard.new(joy_id: joy.id, game_id: game.id)
+    card = Gamecard.new(joy: joy, game: game)
     image_url = StablediffusionService.new(joy.description).call
     card.image_url = image_url
     card.save

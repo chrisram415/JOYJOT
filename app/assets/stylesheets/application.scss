@@ -18,6 +18,7 @@
 @import "components/cards";
 @import "components/stars";
 @import "components/searchbar";
+@import "components/mobile_image";
 
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Dancing+Script&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
@@ -123,4 +124,14 @@ h5::after {
 /* Trigger the fade-in animation when the element becomes visible */
 #inspireText.visible {
   opacity: 1;
+}
+
+/* app/assets/stylesheets/application.css */
+.joy-choice {
+  margin-bottom: 20px; /* Adjust this value as needed for spacing */
+}
+
+/* app/assets/stylesheets/application.scss */
+.text-link {
+  color: inherit; /* Inherits the color from the parent element */
 }
