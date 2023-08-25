@@ -11,7 +11,7 @@ export default class extends Controller {
 
   toggleText(e) {
     e.preventDefault();
-    this.contentTarget.classList.add("d-none");
-    this.textTarget.classList.remove("d-none");
+    this.contentTarget.classList.toggle("d-none");
+    this.textTarget.classList.toggle("d-none");
   }
 }
