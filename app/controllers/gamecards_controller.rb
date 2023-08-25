@@ -8,5 +8,6 @@ class GamecardsController < ApplicationController
   end
 
   def index
+    @solved_gamecards = Gamecard.where(solved: true) # get only solved cards
   end
 end

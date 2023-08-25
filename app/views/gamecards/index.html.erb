@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="description mt-5">
+    <h2>Scrapbook</h2>
+  </div>
+
+  <div class="home-grid mt-5 d-flex flex-wrap">
+    <% if @solved_gamecards.any? %>
+      <% @solved_gamecards.each do |gamecard| %>
+        <div class="card-reco-body">
+          <div class="card-text">
+            <p> <%= gamecard.image_url %></p>
+            <p> <%= gamecard.joy.description %></p>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>You don't have any solved game cards yet</p>
+    <% end %>
+  </div>
+</div>
