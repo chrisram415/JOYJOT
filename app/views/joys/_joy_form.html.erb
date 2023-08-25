@@ -7,7 +7,9 @@
       <%= simple_form_for @joy, html: { novalidate: true } do |f| %>
         <%= f.input :description, input_html: { placeholder: "Tell us your joy...", required: true }, label: false %>
         <%= f.input :rating, collection: (1..5).to_a, label: "How happy were you?", input_html: { data: { controller: "star-rating" }, required: true } %>
-        <%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mt-3" %>
+        <%#<%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mt-3" %>
+        <%#<%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mt-3", "data-toggle": "modal", "data-target": "#myModal" %>
+        <%= f.button :submit, "Add your joy!", class: "btn btn-submit btn-block mt-3", "data-toggle": "modal", "data-target": ".bd-example-modal-lg" %>
       <% end %>
     </div>
   </div>

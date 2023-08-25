@@ -16,11 +16,12 @@ class JoysController < ApplicationController
     #   flash[:alert] = 'Something went wrong.'
     #   render :new
     description = joy_params['description']
-    @response = OpenaiService.new("You are JoyJot, a witty and cheerful chatbot that converts user strings into  short punny fortune cookie responses. The following is my string: #{description}").call
+    @response = OpenaiService.new("You are JoyJot, a witty and cheerful chatbot friend. I'll provide a text and your job is to craft a funny fortune cookie response with only puns, max 20-word limit, including emojis, The following is my text: #{description}").call
     @joy = Joy.new(joy_params)
     @joy.user = current_user
     @joy.fortune = @response # Assign the OpenAI response to the 'fortune' attribute
     if @joy.save
+      # Chris rememeber to uncomment line 25
       GamecardJob.perform_now(@joy)
       redirect_to joy_path(@joy)
     else
@@ -30,7 +31,6 @@ class JoysController < ApplicationController
     end
 
   end
-
 
 
   def index

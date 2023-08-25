@@ -6,6 +6,10 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <%# adding bootstrap? %>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <%# delete line 10 if issues %>
+
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <!-- Add Google Fonts link tags -->
   <link href="https://fonts.googleapis.com/css?family=Font1|Font2&display=swap" rel="stylesheet">
@@ -28,7 +32,13 @@
   <!-- FOOTER -->
   <%= render 'shared/footer' %>
 
+  <%# NEW CODE for fortune cookie %>
+  <turbo-frame id="fortune"></turbo-frame>
 
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%#<%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <%# code for modal %>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
