@@ -130,6 +130,21 @@ h5::after {
   margin-bottom: 8px;
 }
 
+/* app/assets/stylesheets/application.scss */
+.text-link {
+  color: inherit; /* Inherits the color from the parent element */
+}
+
+.custom-h2 {
+  color: LemonChiffon;
+  -webkit-text-stroke: 0.9px #f791a9;
+  margin: 0;
+}
+
+.number {
+  margin: 0 40px;
+}
+
 .center-container {
   display: flex;
   flex-direction: column;
