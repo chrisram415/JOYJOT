@@ -3,12 +3,11 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   shake(event) { // define action named 'shake' that's automatically called when the element is clicked
-    const shakingButton = this.buttonTarget;
-    shakingButton.classList.add("shake"); // adds the "shake" class to the target element
-
+    event.currentTarget.classList.add("shake"); // adds the "shake" class to the target element
+    const button = event.currentTarget
     // Remove the shake class after the animation completes
-    shakingButton.addEventListener("animationend", () => {
-      shakingButton.classList.remove("shake");
-    }, { once: true });
+    event.currentTarget.addEventListener("animationend", () => {
+      button.classList.remove("shake");
+    });
   }
 }
