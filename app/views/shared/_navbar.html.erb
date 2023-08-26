@@ -9,27 +9,43 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <br>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="<%= root_path %>">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/sign_in">Login/sign-up</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/joys">My joys</a>
+          <a class="nav-link" href="/joys">
+            <img src="<%= image_path('joy-icon.png') %>" alt="Joy Logo" class="menu-icon">
+            My joys
+          </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/recommendations">My recommendations</a>
+          <a class="nav-link" href="/recommendations">
+            <img src="<%= image_path('reco-icon.png') %>" alt="Reco Logo" class="menu-icon">
+            My recommendations
+          </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/games">My games</a>
+          <a class="nav-link" href="/games">
+            <img src="<%= image_path('') %>" alt="Game Logo" class="menu-icon">
+            My games
+          </a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/gamecards">My cards</a>
+          <a class="nav-link" href="/gamecards">
+            <img src="<%= image_path('card-icon.png') %>" alt="Card Logo" class="menu-icon">
+            My cards
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Logout</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="/users/sign_in">
+            <img src="<%= image_path('') %>" alt="Login Logo" class="menu-icon">
+            Login/sign-up
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="">
+            <img src="<%= image_path('') %>" alt="Logout Logo" class="menu-icon">
+            Logout
+          </a>
         </li>
       </ul>
     </div>
