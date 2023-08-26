@@ -126,9 +126,8 @@ h5::after {
   opacity: 1;
 }
 
-/* app/assets/stylesheets/application.css */
 .joy-choice {
-  margin-bottom: 20px; /* Adjust this value as needed for spacing */
+  margin-bottom: 8px;
 }
 
 /* app/assets/stylesheets/application.scss */
@@ -144,4 +143,12 @@ h5::after {
 
 .number {
   margin: 0 40px;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; // 70% of viewport height
 }

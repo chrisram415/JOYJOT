@@ -18,3 +18,6 @@ application.register("star-rating", StarRatingController)
 
 import WeeklyButtonController from "./weekly_button_controller"
 application.register("weekly-button", WeeklyButtonController)
+
+import ShakingController from "./shaking_controller"
+application.register("shaking", ShakingController)
