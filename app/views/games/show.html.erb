@@ -22,7 +22,7 @@
           <%= link_to truncate(joy.description, length: 80, omission: "..."), correctanswer_path(:solved => true, :gamecard => @current_gamecard.id), class: "btn btn-gamechoice" %>
         <% end %>
         <% if !joy.gamecard.solved && joy != @current_gamecard.joy%>
-          <%= link_to truncate(joy.description, length: 80, omission: "..."), "javascript:void(0);", class: "btn btn-gamechoice", id: "shaking-button" %>
+          <%= link_to truncate(joy.description, length: 80, omission: "..."), "javascript:void(0);", class: "btn btn-gamechoice", data: {controller: "shaking", action: "click->shaking#shake"} %>
         <% end %>
       </div>
     <% end %>
