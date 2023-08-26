@@ -3,7 +3,8 @@ class GamecardJob < ApplicationJob
 
   def perform(joy)
     game =
-      if Game.where(user_id: joy.user_id).last.gamecards.count == 5
+      if Game.where(user_id: joy.user_id).empty? || Game.where(user_id: joy.user_id).last.gamecards.count == 5
+        # Game.where(user_id: joy.user_id).last && Game.where(user_id: joy.user_id).last.gamecards.count == 5
         # send notification that new game is available?
         Game.create(user_id: joy.user_id)
       else
