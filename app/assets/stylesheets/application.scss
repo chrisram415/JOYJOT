@@ -21,8 +21,8 @@
 @import "components/mobile_image";
 
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Dancing+Script&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Dancing+Script&family=Indie+Flower&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Indie+Flower&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
 
 // common features
 
@@ -36,7 +36,7 @@ body {
   color: #675764;
   background-color: #FFF2F8;
   background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('/assets/background.jpg');
-  background-size: cover;
+  // background-size: cover; comment out so it looks better
 }
 
 h2 {
