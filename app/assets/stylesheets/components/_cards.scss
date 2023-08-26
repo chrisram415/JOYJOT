@@ -25,6 +25,7 @@
   background-color: #ffff;
   padding: 10px;
   padding-bottom: 10px;
+  text-decoration: none;
 }
 
 // reco banner (pink behind pic)
@@ -42,21 +43,26 @@
 
 .card-reco:hover {
   background-color: #f2e1e8;
+  text-decoration: none;
 }
 
 .card-reco-body {
   padding: 5px;
   font-size: 16px;
+  text-decoration: none;
 }
 
 .responsive-truncate {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-decoration: none;
+  color: #675764;
 }
 
 .responsive-truncate:hover {
   white-space: normal;
+  text-decoration: none;
 }
 
 
