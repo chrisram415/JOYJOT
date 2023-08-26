@@ -6,12 +6,12 @@
   <div class="d-flex justify-content-center">
     <div id="gamecard-carousel" class="carousel slide mt-3" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <% if @solved_gamecards.any? %>
-          <% @solved_gamecards.each_with_index do |gamecard, index| %>
+        <% if @gamecards.any? %>
+          <% @gamecards.each_with_index do |gamecard, index| %>
             <div class="carousel-item <%= 'active' if index == 0 %>">
               <div class="card-carousel">
                 <div class="card-text">
-                  <p><%= gamecard.image_url %></p>
+                  <img src="<%= gamecard.image_url %>" class="mobile-friendly-image">
                   <p><%= gamecard.joy.description %></p>
                 </div>
               </div>
