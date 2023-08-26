@@ -66,9 +66,15 @@ class PagesController < ApplicationController
 
     descriptions = @joys.map { |joy| joy.description }
 
-    @response = OpenaiService.new("You are JoyJot, a cheerful motivational chatbot friend. Your task is to craft 1 action based on the following parameters, within a 100-words, including emojis, as a list. If my collection contains joys this week, only recommend 2 weekend activities based on them to amplify my joy. But if my collection is empty, suggest 3 methods to discover happiness.
 
-      Here's my collection: #{descriptions}").call
+
+    # new prompt for joyjot
+    @response = OpenaiService.new("You are JoyJot, a cheerful motivational chatbot friend. Your task is to craft the following action based on these parameters, max 50 words, including emojis, refer to my joys, as a list. If my collection contains joys this week, only recommend 2 weekend activities based on them to amplify my joy. Here's my collection: #{descriptions}").call
+
+
+    # @response = OpenaiService.new("You are JoyJot, a cheerful motivational chatbot friend. Your task is to craft 1 action based on the following parameters, within a 100-words, including emojis, as a list. If my collection contains joys this week, only recommend 2 weekend activities based on them to amplify my joy. But if my collection is empty, suggest 3 methods to discover happiness.
+
+    #   Here's my collection: #{descriptions}").call
 
     # @response = OpenaiService.new("You are JoyJot, a cheerful motivational chatbot friend. count how many strings I have in this array and tell me the number and a joke: #{descriptions}").call
     @my_reccomendation = Recommendation.new
