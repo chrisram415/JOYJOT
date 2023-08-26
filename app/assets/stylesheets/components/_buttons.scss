@@ -41,7 +41,8 @@
   width: 55px;
   height: 55px;
   margin-bottom: 25px;
-  margin-left: 5px;
+  // margin-left: 5px;
+  margin-left: -25px;
   animation: tooltip-pulse 2s infinite;
 }
 
@@ -87,14 +88,21 @@
   border: 1px solid #000000;
   border-radius: 50px;
   padding: 8px 12px;
-  font-size: 14px;
-  white-space: nowrap;
+  // font-size: 14px;
+  font-size: x-small;
+  // white-space: nowrap;
+  white-space: inherit;
   visibility: visible;
   opacity: 1;
   transition: opacity 0.3s;
   font-family: 'Indie Flower', cursive;
   color: #000000;
   animation: tooltip-pulse 2s infinite;
+  // new code
+  right: -200px;
+  bottom: auto;
+  max-width: 58vw;
+  max-height: 20vw
 }
 
 .tooltip-container:hover .tooltip {
