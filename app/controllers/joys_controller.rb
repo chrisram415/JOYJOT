@@ -29,7 +29,6 @@ class JoysController < ApplicationController
       # render :new
       redirect_to new_joy_path
     end
-
   end
 
 
