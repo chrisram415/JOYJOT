@@ -12,6 +12,7 @@ class GamecardJob < ApplicationJob
       end
     card = Gamecard.new(joy: joy, game: game)
     image_url = StablediffusionService.new(joy.description).call
+    p image_url
     card.image_url = image_url
     card.save if card.image_url.present?
   end
