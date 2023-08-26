@@ -1,9 +1,12 @@
 .footer {
   background: white;
   display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
   color: rgba(0, 0, 0, 0.3);
   margin-top: 5px;
 }
