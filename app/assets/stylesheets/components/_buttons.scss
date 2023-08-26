@@ -192,3 +192,35 @@
   opacity: 0.8;
 }
 // <%# adding line of comment code to fix revert %>
+
+// buttons for joy description multiple choice in game
+.btn-gamechoice {
+  color: #fff;
+  border: 1px solid #9c94a4;
+  padding: 8px 16px;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: opacity 0.9s ease;
+  background: #eca6af;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  height: 72px;
+  font-size: 14px;
+}
+
+.btn-gamechoice:hover {
+  opacity: 1;
+  background: #ddb5dfcd;
+  color: #fff;
+}
+
+@keyframes shake { // define new animation sequence called shake
+  0%, 100% { transform: translateX(0); } // % indicate progression of animation
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); } // moving element along horiz axis
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s; // shaking will take half second to complete
+}

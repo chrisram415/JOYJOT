@@ -126,12 +126,29 @@ h5::after {
   opacity: 1;
 }
 
-/* app/assets/stylesheets/application.css */
 .joy-choice {
-  margin-bottom: 20px; /* Adjust this value as needed for spacing */
+  margin-bottom: 8px;
 }
 
 /* app/assets/stylesheets/application.scss */
 .text-link {
   color: inherit; /* Inherits the color from the parent element */
+}
+
+.custom-h2 {
+  color: LemonChiffon;
+  -webkit-text-stroke: 0.9px #f791a9;
+  margin: 0;
+}
+
+.number {
+  margin: 0 40px;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh; // 70% of viewport height
 }

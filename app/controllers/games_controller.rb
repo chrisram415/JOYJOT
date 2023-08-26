@@ -9,6 +9,9 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all
+    uncompleted_games = current_user.games.where(completed: false)
+    @games = uncompleted_games.select do |game|
+      game.gamecards.count == 5
+    end
   end
 end
