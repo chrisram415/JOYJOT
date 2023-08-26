@@ -8,7 +8,6 @@ class GamecardsController < ApplicationController
   end
 
   def index
-    @gamecards = Gamecard.all
-    @solved_gamecards = Gamecard.where(solved: true) # get only solved cards
+    @gamecards = current_user.gamecards.where(solved: true)
   end
 end
