@@ -69,7 +69,6 @@ joy_data.each do |joy_info|
   # save joy plus add images
   joy.save!
 
-
   # joy.photo.attach(io: image_file, filename: "image.jpg")
 
   # Create Gamecards for the Joy
@@ -82,22 +81,26 @@ joy_data.each do |joy_info|
   gamecard.save!
   # gamecard.photo.attach(io: image_file, filename: "image.jpg")
 
+  puts "Creating..."
+end
 
-  # Create Recommendations
+# Create Recommendations
+User.all.each do |user|
   Recommendation.create!(
-    activity: "Hello! Let's create a joy-filled weekend just for you! Since your collection is empty this week, let's dive into activities that might light up your spirit:
-
-    Sunset Adventure 🌅🚴‍♂️: Bike to a scenic spot and savor the sunset, embracing your love for adventure and natural beauty.
-
-    Cooking Fiesta 🍳🎉: Whip up a delicious meal, indulging your joy in culinary creativity!
-
-    Wishing you a weekend brimming with happiness! 🌈😊",
-    rating: Faker::Number.between(from: 0, to: 5),
-    genre: Faker::Music.genre,
     user_id: user.id,
+    activity: "Hello😊 Let's create a joy-filled weekend just for you! Since your collection is empty this week, let's dive into activities that might light up your spirit:\n1. Sunset Adventure 🌅🚴‍♂️: Bike to a scenic spot and savor the sunset, embracing your love for adventure and natural beauty.\n2. Cooking Fiesta 🍳🎉: Whip up a delicious meal, indulging your joy in culinary creativity!\n\nWishing you a weekend brimming with happiness! 🌈😊",
+    rating: Faker::Number.between(from: 1, to: 5),
+    genre: Faker::Music.genre,
+    created_at: "2023-08-25 12:45:09.474964000 +0000"
   )
 
-  puts "Creating..."
+  Recommendation.create!(
+    user_id: user.id,
+    activity: "🌟 Activities to Amplify Joy 🌟\n1. 🎶 Organize a dance party at home with friends to celebrate your love for music! 🎉💃\n2. 🚶‍♀️ Go on a scenic hike with Emily this weekend, capturing beautiful moments and creating more joyful memories together. 🌄❤️\n\nKeep up the joyful spirit! 😄✨",
+    rating: Faker::Number.between(from: 1, to: 5),
+    genre: Faker::Music.genre,
+    created_at: "2023-08-18 12:45:08.190570000 +0000"
+  )
 end
 
 puts "finished!"
