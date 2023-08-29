@@ -90,15 +90,16 @@ a {
 
 .card-carousel {
   border-radius: 10px;
-  width: 350px;
-  height: 400px;
+  width: 260px;
+  height: 450px;
   overflow: hidden;
   color: #675764;
   transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .carousel-control-prev-icon,
@@ -109,6 +110,7 @@ a {
     height: 30px;
     color: #ffffff;
   }
+
 .card-game {
   border-radius: 10px;
   width: 550px;
