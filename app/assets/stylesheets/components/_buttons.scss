@@ -211,12 +211,11 @@
   border-radius: 50px;
   opacity: 0.8;
   transition: opacity 0.9s ease;
-  background: #eca6af;
-  font-weight: bold;
+  background: #e68c98;
   display: flex;
   align-items: center;
-  height: 72px;
-  font-size: 14px;
+  height: 44px;
+  font-size: 13px;
 }
 
 .btn-gamechoice:hover {
@@ -233,4 +232,9 @@
 
 .shake {
   animation: shake 0.5s; // shaking will take half second to complete
+}
+
+.big-icon {
+  width: 72px;
+  height: 72px;
 }

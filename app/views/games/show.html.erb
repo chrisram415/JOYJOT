@@ -1,16 +1,20 @@
 <div class="container" style="margin-bottom: 24px;">
   <% if @game.completed == true %>
     <div class="center-container">
-      <h2>Game Completed!</h2>
-      <%= link_to gamecards_path, class: "btn btn-submit" do %>
-        <h4>See My Cards</h4>
-      <% end %>
+      <h2 class="mt-4 mb-4">Game Completed!</h2>
+      <a href="/gamecards" class="mb-4">
+        <img src="<%= image_path('card-icon.png') %>" alt="Card Logo" class="big-icon">
+      </a>
+      <a href="/recommendations" class="mb-4">
+        <img src="<%= image_path('reco-icon.png') %>" alt="Reco Logo" class="big-icon">
+      </a>
     </div>
 
   <% else %>
     <!-- display one gamecard image at random-->
-    <img src="<%= @current_gamecard.image_url %>" class="mobile-friendly-image">
-
+    <div class="centered-container">
+      <img src="<%= @current_gamecard.image_url %>" class="mobile-friendly-image">
+    </div>
     <!-- for each of the 5 joys (each associated w/ a gamecard) in the game:
           1. the joy description that matches that of the shown image is coded as a link.
             update the @current_gamecard "solved" when link is clicked
@@ -19,10 +23,10 @@
     <% @game.joys.each do |joy| %>
       <div class="joy-choice">
         <% if joy == @current_gamecard.joy  %>
-          <%= link_to truncate(joy.description, length: 80, omission: "..."), correctanswer_path(:solved => true, :gamecard => @current_gamecard.id), class: "btn btn-gamechoice" %>
+          <%= link_to truncate(joy.description, length: 70, omission: "..."), correctanswer_path(:solved => true, :gamecard => @current_gamecard.id), class: "btn btn-gamechoice" %>
         <% end %>
         <% if !joy.gamecard.solved && joy != @current_gamecard.joy%>
-          <%= link_to truncate(joy.description, length: 80, omission: "..."), "javascript:void(0);", class: "btn btn-gamechoice", data: {controller: "shaking", action: "click->shaking#shake"} %>
+          <%= link_to truncate(joy.description, length: 70, omission: "..."), "javascript:void(0);", class: "btn btn-gamechoice", data: {controller: "shaking", action: "click->shaking#shake"} %>
         <% end %>
       </div>
     <% end %>
