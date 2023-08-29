@@ -25,7 +25,7 @@
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/games">
-            <img src="<%= image_path('') %>" alt="Game Logo" class="menu-icon">
+            <img src="<%= image_path('game-icon') %>" alt="Game Logo" class="menu-icon">
             My games
           </a>
         </li>
@@ -37,14 +37,14 @@
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="/users/sign_in">
-            <img src="<%= image_path('') %>" alt="Login Logo" class="menu-icon">
+            <img src="<%= image_path('login-icon') %>" alt="Login Logo" class="menu-icon">
             Login/sign-up
           </a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="">
             <%= link_to destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" do %>
-            <img src="<%= image_path('') %>" alt="Logout Logo" class="menu-icon">
+            <img src="<%= image_path('logout-icon') %>" alt="Logout Logo" class="menu-icon">
             Logout
             <% end %>
           </a>
