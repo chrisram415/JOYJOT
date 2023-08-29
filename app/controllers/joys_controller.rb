@@ -31,7 +31,6 @@ class JoysController < ApplicationController
     end
   end
 
-
   def index
     @joys = current_user.joys.all
     @joys.each do |joy|
@@ -41,6 +40,10 @@ class JoysController < ApplicationController
 
   def show
     @joy = Joy.find(params[:id])
+    uncompleted_games = current_user.games.where(completed: false)
+    @games = uncompleted_games.select do |game|
+      game.gamecards.count == 5
+    end
   end
 
   private
