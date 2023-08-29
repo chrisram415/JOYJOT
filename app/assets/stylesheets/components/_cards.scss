@@ -103,13 +103,22 @@ a {
 }
 
 .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: #F691A9;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    color: #ffffff;
-  }
+.carousel-control-next-icon {
+  background-color: #F691A9;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #ffffff;
+  position: relative; /* Change to position: relative */
+}
+
+.carousel-control-prev-icon {
+  left: 14px; /* Position the left button 10px from the left edge */
+}
+
+.carousel-control-next-icon {
+  right: 14px; /* Position the right button 10px from the right edge */
+}
 
 .card-game {
   border-radius: 10px;
