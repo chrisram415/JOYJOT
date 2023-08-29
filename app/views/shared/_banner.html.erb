@@ -7,9 +7,21 @@
       <div class="middle-firefly"></div>
       <div class="upper-right-firefly"></div>
 
-      <div class="button-container">
-        <a class="btn btn-reco" href="/recommendations">Fri-Yay! Joy awaits: check your recs!</a>
+      <div class="button-container" data-controller="weekly-button">
+        <% if @button_triggered %>
+          <a class="btn btn-reco" href="/recommendations" data-weekly-button-target="button" data-action="click->weekly-button#hideButton">Happy Fri-Yay! Joy awaits: check your recs!</a>
+        <% end %>
       </div>
+
+
     </div>
   </div>
 <% end %>
+
+
+<%# <div data-controller="weekly-button"> %>
+  <%# <a class="btn btn-ghost" href="/recommendations">Happy Friday! Your Weekly Reccomendations Are Ready!</a> %>
+  <%#<% if @button_triggered %>
+    <%# <a class="btn btn-ghost" href="/recommendations" data-weekly-button-target="button" data-action="click->weekly-button#hideButton">Happy Friday! Your Weekly Recommendations Are Ready!</a> %>
+  <%#<% end %>
+<%# </div> %>

@@ -46,6 +46,7 @@ class PagesController < ApplicationController
     # code for button to be triggered to display only if the create rec mehtod was created
     # and if the button was noit previous clicked, meaning it only appears once
     # @weekly_task_executed = session[:weekly_task_executed] # Set instance variable
+    # but remains onscreen as a reminder until you click it
     # instance variable that dtetermine if button triggered or not by checking the session
     @button_triggered = session[:button_triggered] || false
   end
