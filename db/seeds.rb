@@ -61,7 +61,7 @@ joy_data.each do |joy_info|
   # image_file = URI.open(joy_info[:image_url])
   joy = Joy.new(
     description: Faker::Hobby.activity,
-    rating: Faker::Number.between(from: 0, to: 5),
+    rating: Faker::Number.between(from: 1, to: 5),
     fortune: Faker::TvShows::Spongebob.quote,
     genre: Faker::Music.genre,
     user_id: user.id
@@ -85,7 +85,13 @@ joy_data.each do |joy_info|
 
   # Create Recommendations
   Recommendation.create!(
-    activity: Faker::Quote.yoda,
+    activity: "Hello! Let's create a joy-filled weekend just for you! Since your collection is empty this week, let's dive into activities that might light up your spirit:
+
+    Sunset Adventure 🌅🚴‍♂️: Bike to a scenic spot and savor the sunset, embracing your love for adventure and natural beauty.
+
+    Cooking Fiesta 🍳🎉: Whip up a delicious meal, indulging your joy in culinary creativity!
+
+    Wishing you a weekend brimming with happiness! 🌈😊",
     rating: Faker::Number.between(from: 0, to: 5),
     genre: Faker::Music.genre,
     user_id: user.id,
