@@ -38,8 +38,17 @@
             <li><strong>My joy:</strong> <%= @joy.description %> <i class="fa-solid fa-heart" style="color: #ff94d8;"></i></li>
             <li><strong>My rating:</strong> <%= @joy.rating %> <i class="fas fa-star" style="color: #ffc800"></i></li>
           </ul>
-          <div class="mt-5 back-button">
-            <%= link_to 'Back', joys_path, class: 'btn-back' %>
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <%= link_to 'Back', joys_path, class: 'btn-back' %>
+              </div>
+              <div class="col-6">
+                <% if @games.any? %>
+                  <%= link_to 'Game', games_path, class: 'btn-back' %>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
