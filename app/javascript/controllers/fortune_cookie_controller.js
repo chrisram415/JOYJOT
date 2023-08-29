@@ -14,20 +14,25 @@ export default class extends Controller {
     console.log(this.fortuneTarget)
     console.log("We are live!");
     this.rotateFortune();
-
+    // // Delay the start of the animation by 1 second = (1000 milliseconds)
+    // setTimeout(() => {
+    //   this.rotateFortune();
+    // }, 1000);
   }
 
   rotateFortune() {
     // const tl = new TimelineMax({ yoyo: true, repeat: -1, repeatDelay: 3 });
-    const tl = gsap.timeline({ yoyo: true, repeat: -1, repeatDelay: 0.5 });
+    // const tl = gsap.timeline({ yoyo: true, repeat: -1, repeatDelay: 0.5 });
+    // replace the cycle code for do it once
+    const tl = gsap.timeline();
     // const fortune = this.element;
     const fortune = this.fortuneTarget;
     const fortuneLeft = this.fortuneLeftTarget;
     const fortuneRight = this.fortuneRightTarget;
     const fortuneMessage = this.fortuneMessageTarget;
 
-
-    tl.to(fortune, { rotation: 2, delay: 0, duration: 0.07 });
+    // Animation for fortune rotation
+    tl.to(fortune, { rotation: 2, delay: 1.5, duration: 0.07 });
     tl.to(fortune, { rotation: -5, duration: 0.07 });
     tl.to(fortune, { rotation: 2, duration: 0.07 });
     tl.to(fortune, { rotation: -5, duration: 0.07 });
@@ -46,18 +51,38 @@ export default class extends Controller {
     // tl.to(fortuneRight, { rotation: 45, x: 70, y: 70, duration: 0.25 }, 'break');
     // tl.from(fortuneMessage, { x: '110%', duration: 1 }, 'break');
 
-    tl.from(fortuneMessage, {
-      x: '0%',
-      duration: messageDuration, // Set the duration to 7 seconds
-      delay: 0,
-      opacity: 0,
-      onStart: () => {
-        fortuneMessage.classList.add('active');
+    // tl.from(fortuneMessage, {
+    //   x: '0%',
+    //   duration: messageDuration, // Set the duration to 7 seconds
+    //   delay: 0,
+    //   opacity: 0,
+    //   onStart: () => {
+    //     fortuneMessage.classList.add('active');
+    //   },
+    //   onComplete: () => {
+    //     fortuneMessage.classList.remove('active');
+    //   }
+    // }, 'break');
+
+    // Animation for fortuneMessage opacity and position
+    tl.fromTo(
+      fortuneMessage,
+      { x: '0%', opacity: 0 },
+      {
+        x: '0%',
+        opacity: 1,
+        duration: messageDuration,
+        delay: 0,
+        onStart: () => {
+          fortuneMessage.classList.add('active');
+        },
+        onComplete: () => {
+          fortuneMessage.classList.remove('active');
+        }
       },
-      onComplete: () => {
-        fortuneMessage.classList.remove('active');
-      }
-    }, 'break');
+      'break'
+    );
+
   }
 
 }
