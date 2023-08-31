@@ -243,3 +243,34 @@
   width: 32px;
   height: 32px;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flashing-button {
+  display: inline-block;
+  text-align: center;
+  color: #353337;
+  padding: 8px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bolder;
+  border: 1px solid #7BAAD6;
+  animation: flashing 1s infinite alternate;
+}
+
+.flashing-button:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes flashing {
+  from {
+    background-color: #f1e7ad;
+  }
+  to {
+    background-color: #ff65c9;
+  }
+}
