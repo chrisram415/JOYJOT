@@ -12,7 +12,8 @@ class RecommendationsController < ApplicationController
       @recommendations = Recommendation.search_by_activity(params[:query])
     else
       # @recommendations = Recommendation.all
-      @recommendations = current_user.recommendations
+      # add .order(created_at: :desc) to display from most recent 1st = decending order based on created_at timetsamps
+      @recommendations = current_user.recommendations.order(created_at: :desc)
     end
   end
 
