@@ -21,8 +21,8 @@
 @import "components/mobile_image";
 
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Indie+Flower&family=Kablammo&family=Roboto:wght@300&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Roboto:wght@300&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Indie+Flower&family=Kablammo&family=Roboto:wght@300&display=swap');
 
 // common features
 
@@ -44,7 +44,7 @@ h2 {
   font-size: 28px;
   color: #f791a9;
   position: relative;
-  font-family: 'Cherry Bomb One', cursive;
+  font-family: 'Cherry Bomb One', sans-serif;
   text-stroke: 0.9px #fcfcfc;
   -webkit-text-stroke: 0.9px #ffffff;
   text-shadow:
@@ -57,7 +57,7 @@ h2 {
 
 
 h3 {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS', sans-serif;
   color: white;
   text-align: center;
   font-size: 24px;
@@ -70,13 +70,13 @@ h3 {
 
 
 h4 {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS', sans-serif;
   font-size: 20px;
   color: #675764;
 }
 
 h5 {
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Comic Sans MS', sans-serif;
   font-size: 20px;
   font-weight: bold; /* Added to make the text bolder */
   color: #7BAAD6;
