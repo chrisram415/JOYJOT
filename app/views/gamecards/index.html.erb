@@ -25,37 +25,43 @@
 
 
   <div class="d-flex justify-content-center">
-    <div id="gamecard-carousel" class="carousel slide mt-3" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <% if @gamecards.any? %>
-          <% @gamecards.each_with_index do |gamecard, index| %>
-            <div class="carousel-item <%= 'active' if index == 0 %>">
-              <div class="card-carousel">
-                <div class="card-text">
-                  <img src="<%= gamecard.image_url %>" class="mobile-friendly-image">
-                  <br>
-                  <p><%= gamecard.joy.description %></p>
-                </div>
+    <% if @games.any? %>
+      <div class="grid-container">
+        <% @games.each do |game| %>
+          <div class="grid-item">
+            <% carousel_id = "gamecard-carousel-#{game.id}" %>
+            <div id="<%= carousel_id %>" class="carousel slide">
+              <div class="carousel-inner">
+                <% gamecards = game.gamecards.order(created_at: :desc) %>
+                <% gamecards.each_with_index do |gamecard, index| %>
+                  <div class="carousel-item <%= 'active' if index == 0 %>">
+                    <div class="card-carousel">
+                      <div class="card-text">
+                        <img src="<%= gamecard.image_url %>" class="mobile-friendly-image">
+                        <br>
+                        <p><%= truncate(gamecard.joy.description, length: 50, omission: "...") %></p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
               </div>
+              <a class="carousel-control-prev" href="#<%= carousel_id %>" role="button" data-bs-slide="prev" style="left: -4px;">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="background-size: 50% 50%;"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#<%= carousel_id %>" role="button" data-bs-slide="next" style="right: -4px;">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="background-size: 50% 50%;"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
             </div>
-          <% end %>
-        <% else %>
-          <div class="carousel-item active">
-            <p class="text-center">You don't have any solved game cards yet</p>
           </div>
         <% end %>
       </div>
-      <a class="carousel-control-prev" href="#gamecard-carousel" role="button" data-bs-slide="prev"
-        style="left: -30px;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#gamecard-carousel" role="button" data-bs-slide="next"
-        style="right: -30px;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </a>
-    </div>
+    <% else %>
+      <div class="carousel-item active">
+        <p class="text-center">You don't have any solved game cards yet</p>
+      </div>
+    <% end %>
   </div>
 </div>
 

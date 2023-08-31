@@ -160,3 +160,21 @@ h5::after {
   color: inherit;         /* Inherit text color on hover */
   text-decoration: none; /* Remove underline on hover */
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  //grid-gap: 8px;
+}
+
+.grid-item {
+  border: 1px solid #cccccc00;
+  padding: 3px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 320px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
