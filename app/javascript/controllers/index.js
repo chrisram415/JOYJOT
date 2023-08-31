@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import FakeWeeklyButtonController from "./fake_weekly_button_controller"
+application.register("fake-weekly-button", FakeWeeklyButtonController)
+
 import FortuneCookieController from "./fortune_cookie_controller"
 application.register("fortune-cookie", FortuneCookieController)
 
@@ -13,11 +16,11 @@ application.register("hello", HelloController)
 import InspireButtonController from "./inspire_button_controller"
 application.register("inspire-button", InspireButtonController)
 
+import ShakingController from "./shaking_controller"
+application.register("shaking", ShakingController)
+
 import StarRatingController from "./star_rating_controller"
 application.register("star-rating", StarRatingController)
 
 import WeeklyButtonController from "./weekly_button_controller"
 application.register("weekly-button", WeeklyButtonController)
-
-import ShakingController from "./shaking_controller"
-application.register("shaking", ShakingController)
