@@ -90,15 +90,15 @@ a {
 
 .card-carousel {
   border-radius: 10px;
-  width: 260px;
-  height: 450px;
+  width: 180px;
+  height: 200px;
   overflow: hidden;
   color: #675764;
   transition: box-shadow 0.3s ease, filter 0.3s ease, background-color 0.3s ease; /* Include background-color transition */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   background-color: #ffff;
   padding: 10px;
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
   text-align: center;
 }
 
@@ -106,18 +106,18 @@ a {
 .carousel-control-next-icon {
   background-color: #F691A9;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   color: #ffffff;
   position: relative; /* Change to position: relative */
 }
 
 .carousel-control-prev-icon {
-  left: 14px; /* Position the left button 10px from the left edge */
+  left: 4px; /* Position the left button 10px from the left edge */
 }
 
 .carousel-control-next-icon {
-  right: 14px; /* Position the right button 10px from the right edge */
+  right: 4px; /* Position the right button 10px from the right edge */
 }
 
 .card-game {
