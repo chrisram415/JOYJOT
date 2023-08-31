@@ -8,6 +8,8 @@ class GamecardsController < ApplicationController
   end
 
   def index
-    @gamecards = current_user.gamecards.where(solved: true)
+    # @gamecards = current_user.gamecards.where(solved: true)
+    # add the following code to display it from most recently created at / solved
+    @gamecards = current_user.gamecards.where(solved: true).order(created_at: :desc)
   end
 end

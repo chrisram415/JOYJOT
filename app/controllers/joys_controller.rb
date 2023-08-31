@@ -32,7 +32,9 @@ class JoysController < ApplicationController
   end
 
   def index
-    @joys = current_user.joys.all
+    # @joys = current_user.joys.all
+    # code to display in descending order
+    @joys = current_user.joys.order(created_at: :desc)
     @joys.each do |joy|
       joy.rating ||= 0 # Set a default value of 0 if rating is nil
     end
