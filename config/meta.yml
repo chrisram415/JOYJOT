@@ -1,0 +1,5 @@
+meta_product_name: "Product Name"
+meta_title: "JoyJot - Unlock Joy, One Jot at a Time!"
+meta_description: "The app to keep track of all your daily positive moments"
+meta_image: "rainbow.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account" # required for Twitter Cards
