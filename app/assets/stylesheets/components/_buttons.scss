@@ -40,9 +40,9 @@
 .small-icon {
   width: 55px;
   height: 55px;
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
   // margin-left: 5px;
-  margin-left: -25px;
+  // margin-left: -25px;
   animation: tooltip-pulse 2s infinite;
 }
 
@@ -51,19 +51,24 @@
 }
 
 .tooltip-container {
-  position: relative;
-  display: inline-block; /* Use inline-block to wrap the icon and tooltip */
-  word-wrap: break-word;
+  // position: relative;
+  // display: inline-block; /* Use inline-block to wrap the icon and tooltip */
+  // word-wrap: break-word;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
 }
 
 .icon-container {
-  position: relative;
+  // position: relative;
 }
 
 .tooltip-inspire-me {
-  position: absolute;
-  top: calc(100% - 70px);
-  left: calc(100% + 5px); /* Adjust the distance from the icon */
+  // position: absolute;
+  // top: calc(100% - 70px);
+  // left: calc(100% + 5px); /* Adjust the distance from the icon */
   transform: translateY(-50%);
   background-color: #FEF5EB;
   border: 1px solid #000000;
@@ -80,14 +85,14 @@
 }
 
 .tooltip-prompt {
-  position: absolute;
-  top: calc(100% - 35px);
-  left: calc(100% + 5px); /* Adjust the distance from the icon */
-  transform: translateY(-50%);
+  // position: absolute;
+  // top: calc(100% - 35px);
+  // left: calc(100% + 5px); /* Adjust the distance from the icon */
+  // transform: translateY(-50%);
   background-color: #FEF5EB;
   border: 1px solid #000000;
   border-radius: 50px;
-  padding: 8px 12px;
+  padding: 16px;
   // font-size: 14px;
   font-size: x-small;
   // white-space: nowrap;
@@ -102,7 +107,7 @@
   right: -200px;
   bottom: auto;
   max-width: 58vw;
-  max-height: 20vw
+  // max-height: 20vw;
 }
 
 .tooltip-container:hover .tooltip {

@@ -12,20 +12,24 @@
   <div class="container">
     <div class="d-flex justify-content-center align-items-center">
       <div class="card-home">
-        <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4" data-controller="inspire-button">
-          <div class="tooltip-container">
+          <div class="tooltip-container" data-controller="inspire-button">
             <div class="icon-container">
               <%= image_tag 'rainbow-icon.png', alt: 'Inspire Me', class: 'small-icon' %>
             </div>
-            <%= link_to '', class: 'btn-img-inspire', data: { inspire_button_target: 'content' }, 'data-action': 'click->inspire-button#toggleText' do %>
+            <%= link_to '', class: 'btn-img-inspire text-decoration-none', data: { inspire_button_target: 'content' }, 'data-action': 'click->inspire-button#toggleText' do %>
               <div class="tooltip-inspire-me">Inspire me!</div>
             <% end %>
+            <p class="text-center d-none tooltip-prompt card-text m-0 fs-6" id="inspireText visible" data-inspire-button-target="text">
+                <%= @random_prompt %>
+            </p>
+            <div class="icon-container opacity-0">
+              <%= image_tag 'rainbow-icon.png', alt: 'Inspire Me', class: 'small-icon' %>
+            </div>
           </div>
+        <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
           <div class="tooltip-container">
             <div class="icon-container">
-              <p class="text-center d-none tooltip-prompt card-text" id="inspireText visible" data-inspire-button-target="text">
-                <%= @random_prompt %>
-              </p>
+
             </div>
           </div>
           <%= render 'joys/joy_form' %>
