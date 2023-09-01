@@ -242,4 +242,14 @@
 .med-icon {
   width: 32px;
   height: 32px;
+  text-decoration: none
+}
+
+// testing to remove underline:
+.card-game-content a:hover,
+.card-game-content button:hover,
+.card-game-content input:hover,
+.card-game-content select:hover,
+.card-game-content textarea:hover {
+  outline: none;
 }
