@@ -28,12 +28,16 @@
       <a href="<%= recommendation_path(recommendation.id) %>" class="card-reco">
         <div class="card-reco-body">
           <div class="card-text">
-            <p class="responsive-truncate"><%= recommendation.activity %></p>
-              <% recommendation.rating.times do %>
-                <i class="fas fa-star yellow-star"></i>
-              <% end %>
+            <p class=""><%= recommendation.activity.truncate(100) %></p>
             </p>
-            <p class="date"><%= recommendation.created_at.strftime('%Y-%m-%d') %></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <% recommendation.rating.times do %>
+                  <i class="fas fa-star yellow-star"></i>
+                <% end %>
+              </div>
+              <p class="date m-0"><%= recommendation.created_at.strftime('%Y-%m-%d') %></p>
+            </div>
           </div>
         </div>
       </a>
